@@ -1,0 +1,48 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Personal, machine-specific files (see AGENTS.md "Local overrides")
+local.just
+lefthook-local.yml
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Secrets never belong in the repo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Node
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+pnpm-debug.log*
+
+# Playwright output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+*.trace.zip
+
+# Storybook's static build
+storybook-static/
+
+# Fazon's run records and HTML reports, and a developer's own settings, stay
+# out of git (the committed per-component provenance files live elsewhere).
+.fazon/
+fazon.local.yaml

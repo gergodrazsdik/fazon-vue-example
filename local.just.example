@@ -1,0 +1,22 @@
+# Personal recipes. Copy to `local.just` (gitignored); the justfile imports it if present.
+# Keep secrets out of files: read them from your own secret manager at run time.
+# Nothing in the committed justfile depends on these recipes.
+
+# Example: start Claude Code with the model API key from a secret manager of your choice.
+# Replace `my-secret-tool get anthropic/api-key` with your tool's command (a password
+# manager's CLI, the OS keyring, a cloud secret store...). The key lives only in the
+# environment of that one process.
+#
+# [group('local')]
+# my-claude:
+#     #!/bin/sh
+#     set -eu
+#     ANTHROPIC_API_KEY=$(my-secret-tool get anthropic/api-key)
+#     export ANTHROPIC_API_KEY
+#     exec claude
+
+# Example: apply the repository settings to your own fork.
+#
+# [group('local')]
+# my-settings:
+#     just github-settings your-name/fazon-vue-example

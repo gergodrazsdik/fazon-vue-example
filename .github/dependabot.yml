@@ -1,0 +1,19 @@
+---
+# New releases wait 7 days before Dependabot proposes them. The linters pinned
+# in scripts/install-ci-tools.sh and lint.yml are outside Dependabot's reach:
+# `just tool-updates` reports them. The npm ecosystem joins with the library's
+# package.json.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: ci
+    labels: ["dependencies"]
+    groups:
+      github-actions:
+        patterns: ["*"]

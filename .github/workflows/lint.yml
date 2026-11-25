@@ -1,0 +1,106 @@
+---
+name: lint
+
+on:
+  pull_request:
+    # `edited` re-runs pr-title when the title changes.
+    types: [opened, edited, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      FAZON_REQUIRE_TOOLS: "1"
+      # Versions of the linters that come from package registries; the release binaries are
+      # pinned with their digests in scripts/install-ci-tools.sh. Dependabot updates only actions.
+      YAMLLINT_VERSION: "1.38.0"
+      ZIZMOR_VERSION: "1.32.0"
+      MARKDOWNLINT_CLI2_VERSION: "0.24.2"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # gitleaks scans the history
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+      - name: Install linters (release binaries, digests checked)
+        run: |
+          scripts/install-ci-tools.sh "$RUNNER_TEMP/bin"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - name: Install linters (PyPI, exact versions)
+        run: |
+          pipx install "yamllint==${YAMLLINT_VERSION}"
+          pipx install "zizmor==${ZIZMOR_VERSION}"
+      # Exact version; no lockfile for one CLI before the repo has a package.json.
+      - name: Install markdownlint-cli2 (npm, exact version)
+        run: npm install -g "markdownlint-cli2@${MARKDOWNLINT_CLI2_VERSION}"  # zizmor: ignore[adhoc-packages]
+      - name: just lint
+        env:
+          GITHUB_TOKEN: ${{ github.token }} # pinact resolves the pinned SHAs (read-only)
+        run: just lint
+
+  zizmor:
+    name: zizmor
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      security-events: write # upload SARIF to code scanning
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Fails the job on findings and annotates them.
+      - name: Audit the workflows
+        uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          version: "1.32.0"
+          advanced-security: false
+          annotations: true
+      # The same audit as SARIF for the Security tab. A pull request from a fork has a read-only
+      # token, so the upload fails there; that must not fail the job.
+      - name: Upload the results to code scanning
+        if: ${{ !cancelled() }}
+        continue-on-error: ${{ github.event.pull_request.head.repo.fork == true }}
+        uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          version: "1.32.0"
+
+  pr-title:
+    name: pr-title
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha }}
+      # A squash merge uses the title as the commit header on main.
+      - name: Check the pull request title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: scripts/check-commit-msg.sh --title "$PR_TITLE"
+      # A rebase merge lands the commits as they are: warn about headers it would bring to main.
+      - name: Check the commit headers (warnings only)
+        if: ${{ !cancelled() }}
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: scripts/check-commit-msg.sh --range --warn "$BASE_SHA" "$HEAD_SHA"

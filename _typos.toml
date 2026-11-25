@@ -1,0 +1,9 @@
+# typos configuration (https://github.com/crate-ci/typos)
+[files]
+# Upstream texts kept verbatim.
+extend-exclude = ["LICENSE", "CODE_OF_CONDUCT.md"]
+
+[default.extend-words]
+# Project vocabulary that is not a typo.
+fazon = "fazon"
+reka = "reka"
