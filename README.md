@@ -4,7 +4,7 @@ The example component library of [Fazon](https://github.com/gergodrazsdik/fazon)
 
 ## Status
 
-Milestone M1, the walking skeleton. The library has its scaffold, its token set (light and dark themes) and [conventions](docs/conventions.md), and one component, Button: its [spec](specs/button.md), the stories and contract tests `fazon sync` generates from it, a hand-written implementation with behaviour tests, and its screenshot baselines in `baselines/`. `fazon verify` builds, lints, tests and packs the library and renders and checks every story in Fazon's verifier image, on a laptop and in CI; Fazon's reusable CI workflow comes next. Nothing is published to a package registry.
+Milestone M1, the walking skeleton. The library has its scaffold, its token set (light and dark themes) and [conventions](docs/conventions.md), and one component, Button: its [spec](specs/button.md), the stories and contract tests `fazon sync` generates from it, a hand-written implementation with behaviour tests, and its screenshot baselines in `baselines/`. `fazon verify` builds, lints, tests and packs the library and renders and checks every story in Fazon's verifier image, on a laptop and in CI, where Fazon's reusable workflow runs it and posts a summary on the pull request. Nothing is published to a package registry.
 
 The framework's [design brief](https://github.com/gergodrazsdik/fazon/blob/main/docs/design/brief.md), [specs](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/README.md), [decision records](https://github.com/gergodrazsdik/fazon/blob/main/docs/adr/README.md) and [work tracker](https://github.com/gergodrazsdik/fazon/blob/main/docs/plan/TRACKER.md) cover this repository too.
 
