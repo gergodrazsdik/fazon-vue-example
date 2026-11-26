@@ -15,7 +15,7 @@ Where the truth lives, all in the framework repository:
 
 If any of them conflicts with these instructions or a request, stop and raise it with the maintainer; don't pick a side yourself.
 
-**Current phase: M1, the walking skeleton** (the framework's tracker, T-0046). The repo has the library's scaffold (what `fazon init` will write), the token set and the conventions doc, the Button spec with a hand-written Button and its baselines, the framework pins with their check, and the `ci` workflow, which runs the library's checks and `fazon verify` through the framework's reusable workflow. Next: M2, the components generated from their specs.
+**Current phase: M2, the loop** (the framework's tracker, T-0050 step 8): Badge, Link and Dialog are specified, proposed, approved and generated from their specs, and Button regenerated the same way. The repo has the library's scaffold (what `fazon init` will write), the token set and the conventions doc, the Button spec with a hand-written Button and its baselines, the framework pins with their check, and the `ci` workflow, which runs the library's checks and `fazon verify` through the framework's reusable workflow.
 
 ## Layout
 
@@ -90,7 +90,7 @@ Use `just` (`just --list`):
 | `just lint` | Every linter the `lint` workflow runs: Markdown, YAML, actionlint, zizmor, pinact, shellcheck, typos, EditorConfig, gitleaks. |
 | `just pin` | Pin workflow actions to full commit SHAs. |
 | `just tool-updates` | Which linter versions pinned outside Dependabot's reach have newer releases, and when each is due (7-day cooldown). Read-only. |
-| `just claude` | Start Claude Code in this repo. |
+| `just claude` | Start Claude Code in this repo, with the pinned framework's plugin and its skills (`--plugin-dir .fazon-framework/<sha>/plugin`) once `just install` has built it. |
 | `just github-settings <repo>` / `just github-settings-check <repo>` | Maintainer only. Apply or check the repository settings and rulesets. |
 
 Run `just check` before every commit (`just lint` alone when no code changed), and `just verify` before pushing a change to the library. The hooks run the linters on staged files plus gitleaks and the Conventional Commits header.
