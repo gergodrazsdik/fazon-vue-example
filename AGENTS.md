@@ -15,7 +15,7 @@ Where the truth lives, all in the framework repository:
 
 If any of them conflicts with these instructions or a request, stop and raise it with the maintainer; don't pick a side yourself.
 
-**Current phase: M1, the walking skeleton** (the framework's tracker, T-0046). This repo holds its tooling only. Next come the scaffold, the token set and the conventions doc (moved from the framework's `docs/spec/example-library/`), the Button spec and a hand-written Button, the three framework pins with their check, and the CI workflow.
+**Current phase: M1, the walking skeleton** (the framework's tracker, T-0046). The repo has the library's scaffold (what `fazon init` will write), the token set and the conventions doc, the Button spec with a hand-written Button, the framework pins with their check, and the `ci` workflow. Next: the framework's `verify` and its reusable workflow, which replace the `ci` workflow's library job.
 
 ## Layout
 
@@ -23,16 +23,31 @@ If any of them conflicts with these instructions or a request, stop and raise it
 AGENTS.md CLAUDE.md README.md LICENSE THIRD-PARTY-NOTICES.md
 CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md SUPPORT.md
 justfile  local.just.example  lefthook.yml  .editorconfig  lint configs
+fazon.yaml               Fazon's configuration: the adapter, the verifier image by digest, the token prefix `fz`
+package.json  pnpm-workspace.yaml  pnpm-lock.yaml  .node-version
+tsconfig.json  tsconfig.build.json  vite.config.ts  vitest.config.ts  eslint.config.js  stylelint.config.js
+.storybook/              Storybook: main.ts, preview.ts, vitest.setup.ts; generated/themes.ts (fazon sync)
+specs/                   the component specs (button.md)
+src/                     index.ts (the package entry), style.css (loads Inter), tokens.css (fazon sync)
+src/components/<name>/   a component: <Component>.vue, <Component>.test.ts; generated/ (fazon sync)
+tokens/                  the token set: tokens.resolver.json, raw.json, roles.json, themes/, README.md
+docs/conventions.md      the conventions doc
 .claude/settings.json    committed Claude Code sandbox and deny rules
-.github/                 workflows/lint.yml, rulesets/, the PR template, CODEOWNERS, dependabot.yml
-scripts/                 with-tool.sh, check-commit-msg.sh, github-settings.sh, install-ci-tools.sh, tool-updates.sh
+.github/                 workflows/ (lint.yml, ci.yml), rulesets/, the PR template, CODEOWNERS, dependabot.yml
+scripts/                 with-tool.sh, check-commit-msg.sh, github-settings.sh, install-ci-tools.sh, tool-updates.sh, framework.sh, check-framework-pin.sh
 ```
+
+`generated/`, `src/tokens.css`, `.storybook/generated/` and the exports between the `fazon:exports` markers in `src/index.ts` belong to `fazon sync`: never edit them by hand. Change the spec or the token set and run `just sync`.
 
 Directories arrive with the work that first needs them. Keep this tree current when you add top-level folders.
 
 ## Consuming the framework
 
-Until M5 this repo pins **one framework commit**. The CLI and Vue adapter (git dependencies), the reusable workflow reference and the verifier image digest in `fazon.yaml` name the same commit and move together, in one pull request; a CI check fails when they don't ([consuming the framework before M5](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/adapter-boundary.md#consuming-the-framework-before-m5)). A change the library needs from the framework is made in the framework repository first, then the pin moves.
+Until M5 this repo pins **one framework commit**. The CLI and Vue adapter, the reusable workflow reference and the verifier image digest in `fazon.yaml` name the same commit and move together, in one pull request; `scripts/check-framework-pin.sh` (`just check-pins`, the `ci` workflow's `framework-pin` job) fails when they don't ([consuming the framework before M5](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/adapter-boundary.md#consuming-the-framework-before-m5)). A change the library needs from the framework is made in the framework repository first, then the pin moves.
+
+**For now, not git dependencies.** The framework's packages don't install as pnpm git dependencies yet: their `workspace:*` dependencies on each other don't resolve outside the framework's workspace, and nothing builds their `dist/` on install. Until they do, `scripts/framework.sh` (`just framework`, part of `just install`) fetches the pinned commit into `.fazon-framework/<sha>/` (gitignored) and builds it, and `package.json` and the overrides in `pnpm-workspace.yaml` depend on it as `file:.fazon-framework/<sha>/packages/<name>`. The commit is the SHA in those paths.
+
+To move the pin: replace the SHA in `package.json` and `pnpm-workspace.yaml`, set `image` in `fazon.yaml` to the digest of `ghcr.io/gergodrazsdik/fazon-verifier:sha-<sha>` (`crane digest` or `skopeo inspect` give it), run `just install` and `just sync`, and commit the lockfile and any regenerated files with it.
 
 ## Working agreement
 
@@ -59,13 +74,22 @@ Use `just` (`just --list`):
 |---|---|
 | `just doctor` | Check the tools; prints install hints. |
 | `just hooks` | Install the lefthook git hooks. |
+| `just install` | Build the pinned framework commit, then install the dependencies from the lockfile (pnpm). |
+| `just sync` | `fazon sync`: regenerate the components' `generated/` files, the entry's exports, `src/tokens.css` and the Storybook themes. |
+| `just check` | Everything CI checks: `lint`, then `check-pins`, `sync-check`, `lint-code`, `typecheck`, `test`, `build`, `build-storybook` and `package`. |
+| `just check-pins` | The framework's packages, workflow and image name one commit (ADAPTER-003). |
+| `just sync-check` | `fazon sync --check`: the generated files are current. |
+| `just lint-code` | ESLint and Stylelint with Fazon's rules: the token rules, no inline suppressions. |
+| `just typecheck` / `just test` | `vue-tsc --noEmit`; the browser tests (behaviour and contract tests) in Chromium (install it once: `pnpm exec playwright install chromium`). |
+| `just build` / `just build-storybook` / `just package` | The library build (`dist/`); the static Storybook; `pnpm pack` checked with publint. |
+| `just storybook` | Storybook's development server. |
 | `just lint` | Every linter the `lint` workflow runs: Markdown, YAML, actionlint, zizmor, pinact, shellcheck, typos, EditorConfig, gitleaks. |
 | `just pin` | Pin workflow actions to full commit SHAs. |
 | `just tool-updates` | Which linter versions pinned outside Dependabot's reach have newer releases, and when each is due (7-day cooldown). Read-only. |
 | `just claude` | Start Claude Code in this repo. |
 | `just github-settings <repo>` / `just github-settings-check <repo>` | Maintainer only. Apply or check the repository settings and rulesets. |
 
-Run `just lint` before every commit. The hooks run the same checks on staged files plus gitleaks and the Conventional Commits header. `build`, `test` and `verify` arrive with the code.
+Run `just check` before every commit (`just lint` alone when no code changed). The hooks run the linters on staged files plus gitleaks and the Conventional Commits header. `verify` arrives with the framework's `fazon verify`.
 
 ## Design principles
 

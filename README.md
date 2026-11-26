@@ -4,13 +4,26 @@ The example component library of [Fazon](https://github.com/gergodrazsdik/fazon)
 
 ## Status
 
-Milestone M1, the walking skeleton. This repository holds only its tooling so far: lint configuration, git hooks, the lint workflow and the repository settings script. The token set, the conventions doc, the first spec and a hand-written Button arrive next. There is nothing to install or use yet, and nothing is published to a package registry.
+Milestone M1, the walking skeleton. The library has its scaffold, its token set (light and dark themes) and [conventions](docs/conventions.md), and one component, Button: its [spec](specs/button.md), the stories and contract tests `fazon sync` generates from it, and a hand-written implementation with behaviour tests. Fazon's verifier, which renders and checks every story, and its reusable CI workflow come next. Nothing is published to a package registry.
 
 The framework's [design brief](https://github.com/gergodrazsdik/fazon/blob/main/docs/design/brief.md), [specs](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/README.md), [decision records](https://github.com/gergodrazsdik/fazon/blob/main/docs/adr/README.md) and [work tracker](https://github.com/gergodrazsdik/fazon/blob/main/docs/plan/TRACKER.md) cover this repository too.
 
 ## How it uses the framework
 
-Until Fazon's first release (milestone M5), this repository pins one framework commit. Three references name it and move together, in one pull request: the CLI and Vue adapter as git dependencies, the reusable workflow, and the digest of the verifier image built from that commit. A CI check fails when they don't name the same commit ([consuming the framework before M5](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/adapter-boundary.md#consuming-the-framework-before-m5)).
+Until Fazon's first release (milestone M5), this repository pins one framework commit. Three references name it and move together, in one pull request: the CLI and Vue adapter packages, the reusable workflow, and the digest of the verifier image built from that commit. A CI check fails when they don't name the same commit ([consuming the framework before M5](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/adapter-boundary.md#consuming-the-framework-before-m5)). For now the packages are built from the pinned commit by `scripts/framework.sh`, not installed as git dependencies ([AGENTS.md](AGENTS.md#consuming-the-framework)).
+
+## Working on it
+
+You need Node.js 26, pnpm (`corepack enable`), git, [just](https://just.systems/) and curl; `just doctor` checks them and the linters.
+
+```sh
+just install                              # build the pinned framework, install the dependencies
+pnpm exec playwright install chromium     # once: the browser the tests run in
+just check                                # what CI checks
+just storybook                            # browse the stories
+```
+
+The library's styles are two files: `fazon-vue-example/tokens.css` (the design tokens, as custom properties) and `fazon-vue-example/style.css` (the components and the Inter font). An app imports both, and sets `data-theme="dark"` on an element to switch that subtree to the dark theme.
 
 ## Contributing
 

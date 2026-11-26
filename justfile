@@ -41,6 +41,9 @@ doctor:
     check shellcheck           "https://github.com/koalaman/shellcheck#installing"
     check gitleaks             "https://github.com/gitleaks/gitleaks#installing"
     check jq                   "https://jqlang.org/download/"
+    check curl                 "https://curl.se/download.html"
+    check node                 "Node.js 26: https://nodejs.org/ (the version in .node-version)"
+    check pnpm                 "corepack enable (pnpm, the version in package.json's packageManager)"
     echo "Recommended:"
     optional gh                "https://cli.github.com/"
     optional claude            "https://code.claude.com/docs/en/setup"
@@ -67,6 +70,76 @@ hooks:
 [group('dev')]
 claude *args:
     claude {{ args }}
+
+# Build the pinned framework commit, then install the dependencies from the lockfile (pnpm)
+[group('dev')]
+install:
+    scripts/framework.sh
+    pnpm install --frozen-lockfile
+
+# Build the pinned framework commit into .fazon-framework/ (temporary, until git dependencies)
+[group('dev')]
+framework:
+    scripts/framework.sh
+
+# Regenerate the generated files, the entry file's exports and the token CSS (fazon sync)
+[group('dev')]
+sync:
+    pnpm exec fazon sync
+
+# Start Storybook's development server
+[group('dev')]
+storybook:
+    pnpm run storybook
+
+# Everything CI checks: the linters, the framework pins, sync --check, lint-code, types, tests, builds, package
+[group('check')]
+check: lint check-pins sync-check lint-code typecheck test build build-storybook package
+
+# The framework's packages, workflow and image name one commit (ADAPTER-003)
+[group('check')]
+check-pins:
+    scripts/check-framework-pin.sh
+
+# The generated files are current (fazon sync --check)
+[group('check')]
+sync-check:
+    pnpm exec fazon sync --check
+
+# ESLint and Stylelint, with Fazon's rules
+[group('check')]
+lint-code:
+    pnpm run lint
+
+# Type-check (vue-tsc)
+[group('check')]
+typecheck:
+    pnpm run typecheck
+
+# The browser tests in Chromium: behaviour and contract tests (once: pnpm exec playwright install chromium)
+[group('check')]
+test:
+    pnpm test
+
+# Build the library (vite build, then the type declarations)
+[group('check')]
+build:
+    pnpm run build
+
+# Build the static Storybook
+[group('check')]
+build-storybook:
+    pnpm run build-storybook
+
+# Pack the library and check the package (publint)
+[group('check')]
+package:
+    #!/bin/sh
+    set -eu
+    out=$(mktemp -d)
+    trap 'rm -rf "$out"' EXIT
+    pnpm pack --pack-destination "$out"
+    pnpm exec publint run "$out"/*.tgz
 
 # Run every linter (the lint workflow's lint job)
 [group('lint')]
