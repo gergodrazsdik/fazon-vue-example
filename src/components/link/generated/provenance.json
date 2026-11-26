@@ -1,0 +1,12 @@
+{
+  "fazon": 0,
+  "component": "Link",
+  "spec": {
+    "path": "specs/link.md",
+    "hash": "sha256:266b93c3cccc1d7ca724e155bb7c08675e5c9e1497aef063d12f93d80027bfdc"
+  },
+  "api": {
+    "hash": "sha256:073aa76c9a061bcef587af449d3b7c7cc61b5dc46cc12066e6b52b3f610295bc",
+    "approved": "2026-11-26"
+  }
+}
