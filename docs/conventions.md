@@ -26,6 +26,7 @@ The spec fixes the API; the adapter maps it to Vue ([API mapping](https://github
 | Rule | Kept by |
 |---|---|
 | Props, events, slots and methods are camelCase; enum values and states are kebab-case. | Enforced: `spec check` (SPEC-001) |
+| A component's Vue name is its spec name with the prefix `Fz`, set with `defineOptions({ name: "FzButton" })`, so it is never a single word that an HTML element such as `button` could clash with. The file, the export and the spec keep the spec's name. | Enforced: `lint` (eslint-plugin-vue's `vue/multi-word-component-names`) |
 | A boolean prop is named for the state it turns on, without `is` or `has`: `disabled`, `loading`, `open`. | Guidance |
 | A prop with a default in the spec declares it with `withDefaults`, a boolean's `false` too: vue-component-meta reads no default otherwise. | Enforced: `test` (`contract-api`) |
 | Visual emphasis is a `variant` enum. Size is a `size` enum of `sm`, `md` and `lg`, with `md` the default. | Guidance |
