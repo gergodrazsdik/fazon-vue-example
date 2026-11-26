@@ -32,7 +32,7 @@ expected_rule() {
     generated) echo build/generated ;;
     lint) echo lint/raw-value ;;
     test) echo test/behaviour ;;
-    package) echo package/styles ;;
+    package) echo package/manifest ;;
     a11y) echo a11y/spec-aria ;;
     tokens) echo tokens/raw-value ;;
     layout) echo layout/clipped-text ;;
@@ -96,9 +96,8 @@ seed() {
       replace "$component/Button.test.ts" 'toHaveLength(3)' 'toHaveLength(4)'
       ;;
     package)
-      # The stylesheet left out of the exports map.
-      replace package.json '    "./style.css": "./dist/style.css",
-' ''
+      # The exports map names a stylesheet the build doesn't write.
+      replace package.json '"./style.css": "./dist/style.css"' '"./style.css": "./dist/styles.css"'
       ;;
     a11y)
       # The aria-disabled the spec lists, no longer set while loading.
