@@ -1,0 +1,12 @@
+{
+  "fazon": 0,
+  "component": "Badge",
+  "spec": {
+    "path": "specs/badge.md",
+    "hash": "sha256:4479bdbaf16fa3d2b64cd05fb44b7ebea7e3ae0743eaf0eddb53bf6b1f7a1274"
+  },
+  "api": {
+    "hash": "sha256:82f1ec4e6ddf333269cbb457c0595fe920bc48443c9239a60a22b7e8a7e275bc",
+    "approved": "2026-11-26"
+  }
+}
