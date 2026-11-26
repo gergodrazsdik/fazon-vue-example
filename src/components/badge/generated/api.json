@@ -1,0 +1,17 @@
+{
+  "fazon": 0,
+  "adapter": "vue",
+  "component": "Badge",
+  "spec": "specs/badge.md",
+  "forward": "Badge",
+  "components": {
+    "Badge": {
+      "file": "Badge.vue",
+      "name": "FzBadge",
+      "props": {},
+      "events": {},
+      "slots": {},
+      "exposed": {}
+    }
+  }
+}
