@@ -25,6 +25,52 @@ slots:
 forward: root
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
+fixtures:
+  label:
+    props: { href: /releases }
+    slots:
+      default: Read the release notes
+  external:
+    props: { href: "https://vuejs.org", external: true }
+    slots:
+      default: Vue documentation
+  long-label:
+    extends: label
+    slots:
+      default: Read the full migration guide for every component in the library
+    frame:
+      width: 160
+matrix:
+  axes: [variant]
+  fixtures: [label, external, long-label]
+tokens:
+  - when: { props: { variant: default } }
+    use:
+      color: color.text.action
+  - when: { props: { variant: default }, state: hover }
+    use:
+      color: color.text.action-hover
+  - when: { props: { variant: default }, state: active }
+    use:
+      color: color.text.action-active
+  - when: { props: { variant: standalone } }
+    use:
+      color: color.text.action
+  - when: { props: { variant: standalone }, state: hover }
+    use:
+      color: color.text.action-hover
+  - when: { props: { variant: standalone }, state: active }
+    use:
+      color: color.text.action-active
+  - when: { props: { variant: subtle } }
+    use:
+      color: color.text.primary
+  - when: { props: { variant: subtle }, state: hover }
+    use:
+      color: color.text.action
+  - when: { state: focus-visible }
+    use:
+      outline-color: color.focus.ring
 states: [default, hover, focus-visible, active]
 a11y:
   role: link
