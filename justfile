@@ -121,7 +121,7 @@ typecheck:
 test:
     pnpm test
 
-# Build the library (vite build, then the type declarations)
+# Build the library (vite build: the bundle, the stylesheet and the type declarations)
 [group('check')]
 build:
     pnpm run build
@@ -130,6 +130,21 @@ build:
 [group('check')]
 build-storybook:
     pnpm run build-storybook
+
+# Every check in the pinned verifier image: fazon verify, without the judge (needs podman or docker)
+[group('check')]
+verify *args:
+    pnpm exec fazon verify --no-judge {{ args }}
+
+# One seeded failure per check, each in a throwaway copy, must fail fazon verify with its rule
+[group('check')]
+seeded-failures *cases:
+    scripts/seeded-failures.sh {{ cases }}
+
+# Write baselines from the latest verify run that passed: `just baseline-update button`, or --all
+[group('dev')]
+baseline-update +args:
+    pnpm exec fazon baseline update {{ args }}
 
 # Pack the library and check the package (publint)
 [group('check')]

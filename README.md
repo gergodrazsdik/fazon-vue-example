@@ -4,7 +4,7 @@ The example component library of [Fazon](https://github.com/gergodrazsdik/fazon)
 
 ## Status
 
-Milestone M1, the walking skeleton. The library has its scaffold, its token set (light and dark themes) and [conventions](docs/conventions.md), and one component, Button: its [spec](specs/button.md), the stories and contract tests `fazon sync` generates from it, and a hand-written implementation with behaviour tests. Fazon's verifier, which renders and checks every story, and its reusable CI workflow come next. Nothing is published to a package registry.
+Milestone M1, the walking skeleton. The library has its scaffold, its token set (light and dark themes) and [conventions](docs/conventions.md), and one component, Button: its [spec](specs/button.md), the stories and contract tests `fazon sync` generates from it, a hand-written implementation with behaviour tests, and its screenshot baselines in `baselines/`. `fazon verify` builds, lints, tests and packs the library and renders and checks every story in Fazon's verifier image, on a laptop and in CI; Fazon's reusable CI workflow comes next. Nothing is published to a package registry.
 
 The framework's [design brief](https://github.com/gergodrazsdik/fazon/blob/main/docs/design/brief.md), [specs](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/README.md), [decision records](https://github.com/gergodrazsdik/fazon/blob/main/docs/adr/README.md) and [work tracker](https://github.com/gergodrazsdik/fazon/blob/main/docs/plan/TRACKER.md) cover this repository too.
 
@@ -14,14 +14,17 @@ Until Fazon's first release (milestone M5), this repository pins one framework c
 
 ## Working on it
 
-You need Node.js 26, pnpm (`corepack enable`), git, [just](https://just.systems/) and curl; `just doctor` checks them and the linters.
+You need Node.js 26, pnpm (`corepack enable`), git, [just](https://just.systems/) and curl; `just doctor` checks them and the linters. `fazon verify` also needs Podman or Docker, on a linux/amd64 machine.
 
 ```sh
 just install                              # build the pinned framework, install the dependencies
 pnpm exec playwright install chromium     # once: the browser the tests run in
-just check                                # what CI checks
+just check                                # the checks on your machine
+just verify                               # every check in the verifier image, as CI runs it
 just storybook                            # browse the stories
 ```
+
+After an intended change to how a component looks, `just verify` reports its stories as changed; read the diff images in the run's directory (`.fazon/runs/<run>/`), then `just baseline-update <component>` writes the new baselines from that run, to commit with the change.
 
 The library's styles are two files: `fazon-vue-example/tokens.css` (the design tokens, as custom properties) and `fazon-vue-example/style.css` (the components and the Inter font). An app imports both, and sets `data-theme="dark"` on an element to switch that subtree to the dark theme.
 
