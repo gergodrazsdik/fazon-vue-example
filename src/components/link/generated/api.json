@@ -1,0 +1,17 @@
+{
+  "fazon": 0,
+  "adapter": "vue",
+  "component": "Link",
+  "spec": "specs/link.md",
+  "forward": "Link",
+  "components": {
+    "Link": {
+      "file": "Link.vue",
+      "name": "FzLink",
+      "props": {},
+      "events": {},
+      "slots": {},
+      "exposed": {}
+    }
+  }
+}
