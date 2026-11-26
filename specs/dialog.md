@@ -16,10 +16,6 @@ props:
     values: [sm, md, lg]
     default: md
     description: The size of the dialog.
-slots:
-  default:
-    required: true
-    description: The Overlay and Content parts, and optionally the Trigger part.
 forward: Content
 parts:
   Trigger:
@@ -40,10 +36,12 @@ parts:
     count: one
     portal: true
     description: The dialog's surface, shown over the dimmed page while open.
-    slots:
-      default:
-        required: true
-        description: The Title and Body parts, and optionally the Description, Footer and Close parts.
+    a11y:
+      role: dialog
+      name: part:Title
+      describedBy: part:Description
+      aria:
+        aria-modal: "true"
   Title:
     parent: Content
     count: one
@@ -85,6 +83,10 @@ parts:
         type: string
         default: Close
         description: The button's accessible name.
+    states: [default, hover, focus-visible]
+    a11y:
+      role: button
+      name: prop:label
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
 a11y:
@@ -95,6 +97,72 @@ a11y:
   focus:
     trap: true
     restore: true
+    initial: Content
+states: [closed]
+produce:
+  closed:
+    props: { open: false }
+fixtures:
+  confirm:
+    props: { open: true }
+    parts:
+      Trigger:
+        - slots: { default: Delete project }
+      Overlay:
+        - {}
+      Content:
+        - {}
+      Title:
+        - slots: { default: "Delete this project?" }
+      Description:
+        - slots: { default: "This can't be undone." }
+      Body:
+        - slots: { default: "All its components, specs and baselines are removed." }
+      Footer:
+        - slots:
+            default:
+              - { component: Button, props: { variant: secondary }, slots: { default: Cancel } }
+              - { component: Button, props: { variant: primary }, slots: { default: Delete } }
+      Close:
+        - {}
+  long-content:
+    extends: confirm
+    parts:
+      Body:
+        - slots:
+            default:
+              - p: Every component in the project is removed, together with its spec, stories, tests and screenshot baselines.
+              - p: Pull requests that are still open keep their branches, but their checks will fail until the project is restored from a backup.
+              - p: Members keep access to other projects. Their roles in this project are removed, and the audit log keeps a record of the deletion.
+              - p: Integrations that publish this project's package stop at their next run.
+matrix:
+  axes: [size]
+  fixtures: [confirm, long-content]
+  exclude:
+    - { state: closed, props: { size: sm } }
+    - { state: closed, props: { size: lg } }
+tokens:
+  - part: Overlay
+    use:
+      background-color: color.overlay
+  - part: Content
+    use:
+      background-color: color.surface.raised
+      color: color.text.primary
+  - part: Close
+    when: { state: hover }
+    use:
+      background-color: color.surface.hover
+  - part: Close
+    when: { state: focus-visible }
+    use:
+      outline-color: color.focus.ring
+exemptions:
+  - check: layout
+    rule: scroll
+    part: Body
+    fixture: long-content
+    reason: The body scrolls inside the dialog by design when it is taller than the viewport.
 extensions:
   vue:
     reason: A Button used as the trigger must be the trigger element itself; without asChild it would be a button nested inside a button.
