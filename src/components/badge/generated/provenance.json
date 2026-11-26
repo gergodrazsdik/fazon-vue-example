@@ -3,10 +3,29 @@
   "component": "Badge",
   "spec": {
     "path": "specs/badge.md",
-    "hash": "sha256:4479bdbaf16fa3d2b64cd05fb44b7ebea7e3ae0743eaf0eddb53bf6b1f7a1274"
+    "hash": "sha256:a0ba5328459d5fa4e99d752231c9f09bbfa578ec559362f1bd63ab147f603c2b"
   },
   "api": {
     "hash": "sha256:82f1ec4e6ddf333269cbb457c0595fe920bc48443c9239a60a22b7e8a7e275bc",
     "approved": "2026-11-26"
+  },
+  "generation": {
+    "framework": "0.0.0",
+    "accepted": "2026-11-26",
+    "runs": [
+      {
+        "id": "20261126T233958Z-badge-1486",
+        "kind": "generate",
+        "status": "passed",
+        "iterations": 1,
+        "models": [
+          "claude-sonnet-5-5"
+        ],
+        "costUsd": 0.204442
+      }
+    ],
+    "handEdits": 0,
+    "costUsd": 0.204442,
+    "costEstimated": true
   }
 }
