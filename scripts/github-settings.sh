@@ -261,7 +261,7 @@ check() {
 
   got=$(gh api "$api/actions/permissions/workflow" --jq '"\(.default_workflow_permissions) \(.can_approve_pull_request_reviews)"')
   report "Actions token read-only, no PR creation or approval" "$([[ $got == "read false" ]] && echo true || echo false)" "$got"
-  got=$(gh api "$api/actions/permissions" --jq '"\(.allowed_actions) \(.sha_pinning_required // "unsupported")"')
+  got=$(gh api "$api/actions/permissions" --jq '"\(.allowed_actions) \(.sha_pinning_required | if . == null then "unsupported" else . end)"')
   report "Actions: selected actions, SHA pinning required" "$([[ $got == "selected true" ]] && echo true || echo false)" "$got"
   got=$(gh api "$api/actions/permissions/selected-actions")
   ok=$(jq --argjson w "$selected_actions" \
