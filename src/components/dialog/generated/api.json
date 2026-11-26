@@ -3,12 +3,145 @@
   "adapter": "vue",
   "component": "Dialog",
   "spec": "specs/dialog.md",
-  "forward": "Dialog",
+  "forward": "DialogContent",
   "components": {
     "Dialog": {
       "file": "Dialog.vue",
       "name": "FzDialog",
+      "props": {
+        "open": {
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        "size": {
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md"
+        }
+      },
+      "events": {
+        "update:open": {
+          "payload": {
+            "type": "boolean"
+          }
+        }
+      },
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogTrigger": {
+      "file": "DialogTrigger.vue",
+      "name": "FzDialogTrigger",
+      "props": {
+        "asChild": {
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      },
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogOverlay": {
+      "file": "DialogOverlay.vue",
+      "name": "FzDialogOverlay",
       "props": {},
+      "events": {},
+      "slots": {},
+      "exposed": {}
+    },
+    "DialogContent": {
+      "file": "DialogContent.vue",
+      "name": "FzDialogContent",
+      "props": {},
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogTitle": {
+      "file": "DialogTitle.vue",
+      "name": "FzDialogTitle",
+      "props": {},
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogDescription": {
+      "file": "DialogDescription.vue",
+      "name": "FzDialogDescription",
+      "props": {},
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogBody": {
+      "file": "DialogBody.vue",
+      "name": "FzDialogBody",
+      "props": {},
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogFooter": {
+      "file": "DialogFooter.vue",
+      "name": "FzDialogFooter",
+      "props": {},
+      "events": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
+      "exposed": {}
+    },
+    "DialogClose": {
+      "file": "DialogClose.vue",
+      "name": "FzDialogClose",
+      "props": {
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "Close"
+        }
+      },
       "events": {},
       "slots": {},
       "exposed": {}
