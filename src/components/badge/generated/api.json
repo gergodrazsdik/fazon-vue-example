@@ -8,9 +8,40 @@
     "Badge": {
       "file": "Badge.vue",
       "name": "FzBadge",
-      "props": {},
+      "props": {
+        "tone": {
+          "type": "enum",
+          "values": [
+            "neutral",
+            "info",
+            "success",
+            "warning",
+            "danger"
+          ],
+          "required": false,
+          "default": "neutral"
+        },
+        "size": {
+          "type": "enum",
+          "values": [
+            "sm",
+            "md"
+          ],
+          "required": false,
+          "default": "md"
+        }
+      },
       "events": {},
-      "slots": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        },
+        "icon": {
+          "required": false,
+          "props": {}
+        }
+      },
       "exposed": {}
     }
   }

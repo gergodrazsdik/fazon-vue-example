@@ -4,6 +4,23 @@ fazon: 0
 name: Badge
 tier: primitive
 summary: Labels an item with a short status or category, such as New, Draft or Beta.
+props:
+  tone:
+    type: enum
+    values: [neutral, info, success, warning, danger]
+    default: neutral
+    description: The tone. The label says what the badge means; the tone only reinforces it.
+  size:
+    type: enum
+    values: [sm, md]
+    default: md
+slots:
+  default:
+    required: true
+    description: "The label: one to three words, in sentence case."
+  icon:
+    description: A decorative icon before the label.
+forward: root
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
 ---
