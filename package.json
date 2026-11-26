@@ -48,14 +48,14 @@
     "reka-ui": "2.11.0"
   },
   "devDependencies": {
-    "@fazon/adapter-vue": "file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue",
+    "@fazon/adapter-vue": "file:.fazon-framework/b353b849decf73ff446cff7bb357fe2b52c81825/packages/adapter-vue",
     "@storybook/vue3-vite": "10.6.7",
     "@types/node": "26.6.6",
     "@vitejs/plugin-vue": "6.0.11",
     "@vitest/browser-playwright": "5.1.1",
     "eslint": "10.15.0",
     "eslint-plugin-vue": "10.12.1",
-    "fazon": "file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli",
+    "fazon": "file:.fazon-framework/b353b849decf73ff446cff7bb357fe2b52c81825/packages/cli",
     "lucide-static": "1.76.0",
     "playwright": "1.65.1",
     "publint": "0.3.25",

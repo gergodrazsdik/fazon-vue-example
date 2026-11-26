@@ -10,6 +10,6 @@ Additions for Claude Code only; everything shared is in AGENTS.md (imported abov
   - GitHub: `gh` (pull requests with `gh pr create --body-file <file>`, `gh pr edit --body-file <file>`), and `just github-settings` / `just github-settings-check`.
 
   A call only runs outside when the whole command matches: no `cd … &&`, pipes, heredocs, `$(...)` or redirections around it. Project settings can't add sandbox exclusions; they live in each user's own settings.
-- **Start sessions with `just claude`** (extra arguments are passed through).
+- **Start sessions with `just claude`** (extra arguments are passed through). It loads the pinned framework's plugin, so the `fazon:spec` skill is available.
 - **Subagents:** give each one its own git worktree and branch, explicit file ownership and its own pull request. Shared files (AGENTS.md) belong to the main agent; subagents propose changes to them in their pull request description.
 - **Check what loads:** `claude -p --permission-mode plan "list the instruction files in your context"` from the repo root.
