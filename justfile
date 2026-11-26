@@ -66,10 +66,19 @@ tool-updates:
 hooks:
     lefthook install
 
-# Start Claude Code in this repo (extra arguments are passed through)
+# Start Claude Code in this repo with the pinned framework's plugin (its skills), once `just install` built it (extra arguments are passed through)
 [group('dev')]
 claude *args:
-    claude {{ args }}
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # The plugin comes from the framework commit the CLI is pinned to (the framework's ADR 0023).
+    sha=$(node -p 'require("./package.json").devDependencies.fazon.split("/")[1]')
+    plugin=".fazon-framework/$sha/plugin"
+    if [ -d "$plugin" ]; then
+      exec claude --plugin-dir "$plugin" {{ args }}
+    fi
+    echo "The framework's plugin isn't in $plugin yet: run 'just install' to build it. Starting without it." >&2
+    exec claude {{ args }}
 
 # Build the pinned framework commit, then install the dependencies from the lockfile (pnpm)
 [group('dev')]

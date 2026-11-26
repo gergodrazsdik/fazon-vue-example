@@ -5,7 +5,7 @@
 ---
 fazon: 0
 adapter: vue
-image: ghcr.io/gergodrazsdik/fazon-verifier@sha256:03620a1cd6327b40932c210cda96e7b0c9ff1adfff086629e2bff2a8ea0862e6
+image: ghcr.io/gergodrazsdik/fazon-verifier@sha256:eb3e82ba3162c31bfb043dbafecd10378e16b7fe658052e4dcc3eb3d134fd8a9
 
 tokens:
   prefix: fz
