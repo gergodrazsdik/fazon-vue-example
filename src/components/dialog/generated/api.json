@@ -1,0 +1,17 @@
+{
+  "fazon": 0,
+  "adapter": "vue",
+  "component": "Dialog",
+  "spec": "specs/dialog.md",
+  "forward": "Dialog",
+  "components": {
+    "Dialog": {
+      "file": "Dialog.vue",
+      "name": "FzDialog",
+      "props": {},
+      "events": {},
+      "slots": {},
+      "exposed": {}
+    }
+  }
+}
