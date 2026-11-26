@@ -34,7 +34,7 @@ A cool grey with a blue accent, and red, green and amber for status. The font is
 | `size` | 4 16px, 5 20px, 6 24px, 8 32px, 10 40px, 12 48px | `size.control.{sm, md, lg}`: 32, 40, 48 px; `size.icon.{sm, md, lg}`: 16, 20, 24 px; `size.avatar.{sm, md, lg}`: 24, 32, 48 px |
 | `radius` | 1 4px, 2 6px, 3 8px, 4 12px, max 9999px | `radius.small` 4px, `radius.control` 6px, `radius.surface` 8px, `radius.dialog` 12px, `radius.full` |
 | `border-width` | 1 1px, 2 2px | `border-width.default` 1px, `border-width.focus` 2px; `outline-offset.focus` 2px |
-| `font-family` | inter: Inter, system-ui, sans-serif | `font-family.body` |
+| `font-family` | inter: Inter Variable (the `@fontsource-variable/inter` family), Inter, system-ui, sans-serif | `font-family.body` |
 | `font-size` | 1 0.75rem, 2 0.875rem, 3 1rem, 4 1.125rem | `font-size.small` 12px, `font-size.body` 14px, `font-size.large` 16px, `font-size.title` 18px |
 | `font-weight` | 400, 500, 600 | `font-weight.body` 400, `font-weight.medium` 500, `font-weight.strong` 600 |
 | `line-height` | 1 1.25, 2 1.5 | `line-height.tight` 1.25, `line-height.body` 1.5 |
