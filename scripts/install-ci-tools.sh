@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: MIT-0
 # Installs the release binaries the lint workflow needs into <bin-dir>, each
 # checked against the SHA-256 digest pinned below before it is unpacked.
 # Linux x86_64 only: this is for CI runners. Locally, `just doctor` lists the

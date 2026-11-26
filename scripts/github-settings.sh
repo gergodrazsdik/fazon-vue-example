@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: MIT-0
 # Applies the example repository's GitHub settings, or reads them back and reports differences.
 #
 # Usage: scripts/github-settings.sh [--check] [--no-required-checks] <owner/repo>

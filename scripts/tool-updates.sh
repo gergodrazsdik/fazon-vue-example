@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: MIT-0
 # Reports which linter versions pinned outside Dependabot's reach have newer releases, and when
 # each update is due: a release is taken once it is 7 days old, the same cooldown Dependabot keeps
 # for the actions. Read-only: it changes nothing.

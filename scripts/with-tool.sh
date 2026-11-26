@@ -1,5 +1,4 @@
 #!/bin/sh
-# SPDX-License-Identifier: MIT-0
 # Run a lint tool if it is installed; otherwise skip with a clear message.
 # Usage: scripts/with-tool.sh <tool> [args...]
 #
