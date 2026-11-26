@@ -76,14 +76,44 @@ tokens:
   - when: { props: { variant: primary }, state: hover }
     use:
       background-color: color.action.primary-hover
+  - when: { props: { variant: primary }, state: active }
+    use:
+      background-color: color.action.primary-active
+  - when: { props: { variant: primary }, state: disabled }
+    use:
+      background-color: color.surface.subtle
+      color: color.text.disabled
+      border-color: color.border.default
   - when: { props: { variant: secondary } }
     use:
       background-color: color.surface.raised
       border-color: color.border.default
       color: color.text.primary
+  - when: { props: { variant: secondary }, state: hover }
+    use:
+      background-color: color.surface.hover
+  - when: { props: { variant: secondary }, state: active }
+    use:
+      background-color: color.surface.active
+  - when: { props: { variant: secondary }, state: disabled }
+    use:
+      background-color: color.surface.subtle
+      color: color.text.disabled
+      border-color: color.border.default
   - when: { props: { variant: ghost } }
     use:
       color: color.text.action
+  - when: { props: { variant: ghost }, state: hover }
+    use:
+      background-color: color.surface.hover
+  - when: { props: { variant: ghost }, state: active }
+    use:
+      background-color: color.surface.active
+  - when: { props: { variant: ghost }, state: disabled }
+    use:
+      background-color: color.surface.subtle
+      color: color.text.disabled
+      border-color: color.border.default
   - when: { state: focus-visible }
     use:
       outline-color: color.focus.ring

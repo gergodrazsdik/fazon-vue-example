@@ -97,7 +97,7 @@ button {
   letter-spacing: normal;
   text-align: center;
   cursor: pointer;
-  transition-property: background-color, border-color, color, box-shadow;
+  transition-property: background-color, border-color, color;
   transition-duration: var(--fz-motion-duration-fast);
   transition-timing-function: var(--fz-motion-easing-standard);
 }
@@ -118,7 +118,7 @@ button {
   --_icon-size: var(--fz-size-icon-md);
 }
 
-/* Variants: the spec's token rules hold in every state. */
+/* Variants and their states, as the spec's token rules set them. Loading keeps the default look. */
 [data-variant="primary"] {
   background-color: var(--fz-color-action-primary);
   color: var(--fz-color-text-on-action);
@@ -128,30 +128,35 @@ button {
   background-color: var(--fz-color-action-primary-hover);
 }
 
+[data-variant="primary"]:active:not(:disabled, [data-loading]) {
+  background-color: var(--fz-color-action-primary-active);
+}
+
 [data-variant="secondary"] {
   border-color: var(--fz-color-border-default);
   background-color: var(--fz-color-surface-raised);
   color: var(--fz-color-text-primary);
 }
 
-[data-variant="secondary"]:hover:not(:disabled, [data-loading]) {
-  box-shadow: var(--fz-shadow-raised);
-}
-
 [data-variant="ghost"] {
   color: var(--fz-color-text-action);
 }
 
+[data-variant="secondary"]:hover:not(:disabled, [data-loading]),
 [data-variant="ghost"]:hover:not(:disabled, [data-loading]) {
   background-color: var(--fz-color-surface-hover);
 }
 
+[data-variant="secondary"]:active:not(:disabled, [data-loading]),
 [data-variant="ghost"]:active:not(:disabled, [data-loading]) {
   background-color: var(--fz-color-surface-active);
 }
 
-button:active:not(:disabled, [data-loading]) {
-  transform: translateY(1px);
+/* Disabled, in every variant: no hover or active style, and not transparent. */
+button:disabled {
+  border-color: var(--fz-color-border-default);
+  background-color: var(--fz-color-surface-subtle);
+  color: var(--fz-color-text-disabled);
 }
 
 button:focus-visible {

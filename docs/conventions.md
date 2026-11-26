@@ -66,7 +66,7 @@ Plain CSS with custom properties, scoped per component. The tokens are built int
 ### Focus, disabled and motion
 
 - **Focus:** `:focus-visible` draws an outline of `border-width.focus` in `color.focus.ring`, offset by `outline-offset.focus`. Focus is never shown with colour alone.
-- **Disabled:** text in `color.text.disabled`, borders in `color.border.default`, and no hover style. A disabled control isn't made transparent.
+- **Disabled:** background in `color.surface.subtle`, text in `color.text.disabled`, borders in `color.border.default`, and no hover style. A disabled control isn't made transparent.
 - **Motion:** transitions use `motion.duration.*` and `motion.easing.*`, and only on colour, shadow, opacity and transform. Under `prefers-reduced-motion: reduce`, a component has no transition or animation, and a spinner shows a still indicator. The verifier renders with reduced motion, so captures are stable.
 - **Surfaces:** cards use `color.surface.raised`, `radius.surface` and `shadow.raised`; menus, popovers and tooltips `shadow.popover`; the dialog `radius.dialog` and `shadow.dialog` over `color.overlay`.
 
