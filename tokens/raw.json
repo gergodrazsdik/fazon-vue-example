@@ -91,7 +91,7 @@
     "2": { "$type": "dimension", "$value": { "value": 2, "unit": "px" } }
   },
   "font-family": {
-    "inter": { "$type": "fontFamily", "$value": ["Inter", "system-ui", "sans-serif"] }
+    "inter": { "$type": "fontFamily", "$value": ["Inter Variable", "Inter", "system-ui", "sans-serif"] }
   },
   "font-size": {
     "1": { "$type": "dimension", "$value": { "value": 0.75, "unit": "rem" } },

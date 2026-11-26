@@ -15,7 +15,7 @@ Where the truth lives, all in the framework repository:
 
 If any of them conflicts with these instructions or a request, stop and raise it with the maintainer; don't pick a side yourself.
 
-**Current phase: M1, the walking skeleton** (the framework's tracker, T-0046). The repo has the library's scaffold (what `fazon init` will write), the token set and the conventions doc, the Button spec with a hand-written Button, the framework pins with their check, and the `ci` workflow. Next: the framework's `verify` and its reusable workflow, which replace the `ci` workflow's library job.
+**Current phase: M1, the walking skeleton** (the framework's tracker, T-0046). The repo has the library's scaffold (what `fazon init` will write), the token set and the conventions doc, the Button spec with a hand-written Button and its baselines, the framework pins with their check, and the `ci` workflow, which runs `fazon verify`. Next: the framework's reusable workflow, which replaces the `ci` workflow's library and verify jobs.
 
 ## Layout
 
@@ -24,6 +24,7 @@ AGENTS.md CLAUDE.md README.md LICENSE THIRD-PARTY-NOTICES.md
 CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md SUPPORT.md
 justfile  local.just.example  lefthook.yml  .editorconfig  lint configs
 fazon.yaml               Fazon's configuration: the adapter, the verifier image by digest, the token prefix `fz`
+baselines/               the stories' screenshot baselines, fazon.json (the image that made them) and NOTICE.md: `fazon baseline update` only
 package.json  pnpm-workspace.yaml  pnpm-lock.yaml  .node-version
 tsconfig.json  tsconfig.build.json  vite.config.ts  vitest.config.ts  eslint.config.js  stylelint.config.js
 .storybook/              Storybook: main.ts, preview.ts, vitest.setup.ts; generated/themes.ts (fazon sync)
@@ -34,10 +35,10 @@ tokens/                  the token set: tokens.resolver.json, raw.json, roles.js
 docs/conventions.md      the conventions doc
 .claude/settings.json    committed Claude Code sandbox and deny rules
 .github/                 workflows/ (lint.yml, ci.yml), rulesets/, the PR template, CODEOWNERS, dependabot.yml
-scripts/                 with-tool.sh, check-commit-msg.sh, github-settings.sh, install-ci-tools.sh, tool-updates.sh, framework.sh, check-framework-pin.sh
+scripts/                 with-tool.sh, check-commit-msg.sh, github-settings.sh, install-ci-tools.sh, tool-updates.sh, framework.sh, check-framework-pin.sh, seeded-failures.sh
 ```
 
-`generated/`, `src/tokens.css`, `.storybook/generated/` and the exports between the `fazon:exports` markers in `src/index.ts` belong to `fazon sync`: never edit them by hand. Change the spec or the token set and run `just sync`.
+`generated/`, `src/tokens.css`, `.storybook/generated/` and the exports between the `fazon:exports` markers in `src/index.ts` belong to `fazon sync`: never edit them by hand. Change the spec or the token set and run `just sync`. `baselines/` belongs to `fazon baseline update`: never edit, add or remove a baseline by hand.
 
 Directories arrive with the work that first needs them. Keep this tree current when you add top-level folders.
 
@@ -81,7 +82,10 @@ Use `just` (`just --list`):
 | `just sync-check` | `fazon sync --check`: the generated files are current. |
 | `just lint-code` | ESLint and Stylelint with Fazon's rules: the token rules, no inline suppressions. |
 | `just typecheck` / `just test` | `vue-tsc --noEmit`; the browser tests (behaviour and contract tests) in Chromium (install it once: `pnpm exec playwright install chromium`). |
-| `just build` / `just build-storybook` / `just package` | The library build (`dist/`); the static Storybook; `pnpm pack` checked with publint. |
+| `just build` / `just build-storybook` / `just package` | The library build (`dist/`, with the type declarations); the static Storybook; `pnpm pack` checked with publint. |
+| `just verify` | `fazon verify --no-judge`: every check (build, lint, test, package, a11y, tokens, layout, visual) in the verifier image, with Podman or Docker on linux/amd64; the run's record, captures and diff images go to `.fazon/runs/<run>/`. The `ci` workflow's `verify` job runs it too. |
+| `just baseline-update <component>…` / `--all` | `fazon baseline update`: write the baselines from the latest verify run that passed every check other than `visual`. Only after an intended change to the component's look, which the diff images show. |
+| `just seeded-failures [<case>…]` | One defect per check, each in a throwaway copy under `.fazon/seeded/`, must fail `fazon verify` with its rule (about a minute per case). |
 | `just storybook` | Storybook's development server. |
 | `just lint` | Every linter the `lint` workflow runs: Markdown, YAML, actionlint, zizmor, pinact, shellcheck, typos, EditorConfig, gitleaks. |
 | `just pin` | Pin workflow actions to full commit SHAs. |
@@ -89,7 +93,9 @@ Use `just` (`just --list`):
 | `just claude` | Start Claude Code in this repo. |
 | `just github-settings <repo>` / `just github-settings-check <repo>` | Maintainer only. Apply or check the repository settings and rulesets. |
 
-Run `just check` before every commit (`just lint` alone when no code changed). The hooks run the linters on staged files plus gitleaks and the Conventional Commits header. `verify` arrives with the framework's `fazon verify`.
+Run `just check` before every commit (`just lint` alone when no code changed), and `just verify` before pushing a change to the library. The hooks run the linters on staged files plus gitleaks and the Conventional Commits header.
+
+`fazon verify` at the pinned commit links the tool caches in `node_modules` (`.cache`, `.vite`, `.vite-temp`, `.vitest-cache`, which `just test`, `just build` and Storybook write) read-only into the image, where Vite and Storybook then fail with `EROFS`. Until the framework fixes it, delete those four directories before `just verify`; CI's fresh install has none.
 
 ## Design principles
 
