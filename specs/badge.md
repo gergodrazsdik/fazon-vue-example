@@ -23,6 +23,48 @@ slots:
 forward: root
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
+fixtures:
+  label:
+    slots:
+      default: New
+  with-icon:
+    extends: label
+    slots:
+      icon: { icon: check }
+  long-label:
+    slots:
+      default: Waiting for review by the design team
+    frame:
+      width: 120
+matrix:
+  axes: [tone, size]
+  fixtures: [label, with-icon, long-label]
+tokens:
+  - when: { props: { tone: neutral } }
+    use:
+      background-color: color.surface.subtle
+      color: color.text.primary
+      border-color: color.border.default
+  - when: { props: { tone: info } }
+    use:
+      background-color: color.status.info.surface
+      color: color.status.info.text
+      border-color: color.status.info.border
+  - when: { props: { tone: success } }
+    use:
+      background-color: color.status.success.surface
+      color: color.status.success.text
+      border-color: color.status.success.border
+  - when: { props: { tone: warning } }
+    use:
+      background-color: color.status.warning.surface
+      color: color.status.warning.text
+      border-color: color.status.warning.border
+  - when: { props: { tone: danger } }
+    use:
+      background-color: color.status.danger.surface
+      color: color.status.danger.text
+      border-color: color.status.danger.border
 ---
 
 ## Purpose
