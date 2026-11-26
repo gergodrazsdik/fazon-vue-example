@@ -1,0 +1,90 @@
+{
+  "fazon": 0,
+  "component": "Link",
+  "spec": "specs/link.md",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "viewport": {
+    "width": 1024,
+    "height": 768,
+    "scale": 2
+  },
+  "fixtures": {
+    "empty": {}
+  },
+  "stories": [
+    {
+      "name": "link--empty--default",
+      "storybookId": "link--empty-default",
+      "grid": "axes",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "default"
+      },
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "link--empty--hover",
+      "storybookId": "link--empty-hover",
+      "grid": "states",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "hover"
+      },
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--empty--focus-visible",
+      "storybookId": "link--empty-focus-visible",
+      "grid": "states",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "focus-visible"
+      },
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--empty--active",
+      "storybookId": "link--empty-active",
+      "grid": "states",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "active"
+      },
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    }
+  ]
+}
