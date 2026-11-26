@@ -99,6 +99,8 @@
   --fz-color-text-secondary: var(--fz-color-neutral-600);
   --fz-color-text-disabled: var(--fz-color-neutral-400);
   --fz-color-text-action: var(--fz-color-blue-600);
+  --fz-color-text-action-hover: var(--fz-color-blue-700);
+  --fz-color-text-action-active: var(--fz-color-blue-800);
   --fz-color-text-on-action: var(--fz-color-neutral-0);
   --fz-color-text-inverse: var(--fz-color-neutral-0);
   --fz-color-border-default: var(--fz-color-neutral-200);
@@ -183,6 +185,8 @@
   --fz-color-text-secondary: var(--fz-color-neutral-600);
   --fz-color-text-disabled: var(--fz-color-neutral-400);
   --fz-color-text-action: var(--fz-color-blue-600);
+  --fz-color-text-action-hover: var(--fz-color-blue-700);
+  --fz-color-text-action-active: var(--fz-color-blue-800);
   --fz-color-text-on-action: var(--fz-color-neutral-0);
   --fz-color-text-inverse: var(--fz-color-neutral-0);
   --fz-color-border-default: var(--fz-color-neutral-200);
@@ -219,6 +223,8 @@
   --fz-color-text-secondary: var(--fz-color-neutral-400);
   --fz-color-text-disabled: var(--fz-color-neutral-600);
   --fz-color-text-action: var(--fz-color-blue-200);
+  --fz-color-text-action-hover: var(--fz-color-blue-100);
+  --fz-color-text-action-active: var(--fz-color-blue-50);
   --fz-color-text-on-action: var(--fz-color-neutral-950);
   --fz-color-text-inverse: var(--fz-color-neutral-900);
   --fz-color-border-default: var(--fz-color-neutral-800);

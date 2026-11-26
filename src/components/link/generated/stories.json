@@ -12,32 +12,127 @@
     "scale": 2
   },
   "fixtures": {
-    "empty": {}
+    "label": {
+      "props": {
+        "href": "/releases"
+      },
+      "slots": {
+        "default": "Read the release notes"
+      }
+    },
+    "external": {
+      "props": {
+        "href": "https://vuejs.org",
+        "external": true
+      },
+      "slots": {
+        "default": "Vue documentation"
+      }
+    },
+    "long-label": {
+      "props": {
+        "href": "/releases"
+      },
+      "slots": {
+        "default": "Read the full migration guide for every component in the library"
+      },
+      "frame": {
+        "width": 160
+      }
+    }
   },
   "stories": [
     {
-      "name": "link--empty--default",
-      "storybookId": "link--empty-default",
+      "name": "link--label--variant-default--default",
+      "storybookId": "link--label-variant-default-default",
       "grid": "axes",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "label",
+      "axes": {
+        "variant": "default"
+      },
       "state": {
         "name": "default"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
+        }
+      ],
       "judge": [
         "light",
         "dark"
       ]
     },
     {
-      "name": "link--empty--hover",
-      "storybookId": "link--empty-hover",
+      "name": "link--label--variant-subtle--default",
+      "storybookId": "link--label-variant-subtle-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "subtle"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "subtle"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "link--label--variant-standalone--default",
+      "storybookId": "link--label-variant-standalone-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "standalone"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "standalone"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "link--label--variant-default--hover",
+      "storybookId": "link--label-variant-default-hover",
       "grid": "states",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "label",
+      "axes": {
+        "variant": "default"
+      },
       "state": {
         "name": "hover"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
+        }
+      ],
       "input": [
         {
           "action": "hover",
@@ -49,14 +144,82 @@
       ]
     },
     {
-      "name": "link--empty--focus-visible",
-      "storybookId": "link--empty-focus-visible",
+      "name": "link--label--variant-subtle--hover",
+      "storybookId": "link--label-variant-subtle-hover",
       "grid": "states",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "label",
+      "axes": {
+        "variant": "subtle"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "subtle"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-standalone--hover",
+      "storybookId": "link--label-variant-standalone-hover",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "standalone"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "standalone"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-default--focus-visible",
+      "storybookId": "link--label-variant-default-focus-visible",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "default"
+      },
       "state": {
         "name": "focus-visible"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
+        }
+      ],
       "input": [
         {
           "action": "focus",
@@ -68,18 +231,190 @@
       ]
     },
     {
-      "name": "link--empty--active",
-      "storybookId": "link--empty-active",
+      "name": "link--label--variant-subtle--focus-visible",
+      "storybookId": "link--label-variant-subtle-focus-visible",
       "grid": "states",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "label",
+      "axes": {
+        "variant": "subtle"
+      },
+      "state": {
+        "name": "focus-visible"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "subtle"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-standalone--focus-visible",
+      "storybookId": "link--label-variant-standalone-focus-visible",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "standalone"
+      },
+      "state": {
+        "name": "focus-visible"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "standalone"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-default--active",
+      "storybookId": "link--label-variant-default-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "default"
+      },
       "state": {
         "name": "active"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
+        }
+      ],
       "input": [
         {
           "action": "pointer-down",
           "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-subtle--active",
+      "storybookId": "link--label-variant-subtle-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "subtle"
+      },
+      "state": {
+        "name": "active"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "subtle"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--label--variant-standalone--active",
+      "storybookId": "link--label-variant-standalone-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "standalone"
+      },
+      "state": {
+        "name": "active"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "standalone"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--external--variant-default--default",
+      "storybookId": "link--external-variant-default-default",
+      "grid": "fixtures",
+      "fixture": "external",
+      "axes": {
+        "variant": "default"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "link--long-label--variant-default--default",
+      "storybookId": "link--long-label-variant-default-default",
+      "grid": "fixtures",
+      "fixture": "long-label",
+      "axes": {
+        "variant": "default"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "default"
+          }
         }
       ],
       "judge": [

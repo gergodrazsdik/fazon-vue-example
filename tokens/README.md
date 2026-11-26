@@ -57,6 +57,8 @@ The colour roles point at these raw tokens, under `color.`, in each theme:
 | `color.text.secondary` | `neutral.600` | `neutral.400` |
 | `color.text.disabled` | `neutral.400` | `neutral.600` |
 | `color.text.action` | `blue.600` | `blue.200` |
+| `color.text.action-hover` | `blue.700` | `blue.100` |
+| `color.text.action-active` | `blue.800` | `blue.50` |
 | `color.text.on-action` | `neutral.0` | `neutral.950` |
 | `color.text.inverse` | `neutral.0` | `neutral.900` |
 | `color.border.default` | `neutral.200` | `neutral.800` |
@@ -100,6 +102,10 @@ Computed with the WCAG 2.2 formula from the raw colours each role points at. Tex
 | `text.action` on `surface.raised` | 4.5 | 6.30 | 10.50 |
 | `text.action` on `surface.hover` | 4.5 | 5.42 | 8.42 |
 | `text.action` on `surface.active` | 4.5 | 4.72 | 6.03 |
+| `text.action-hover` on `surface.base` | 4.5 | 8.57 | 14.62 |
+| `text.action-hover` on `surface.raised` | 4.5 | 8.57 | 13.08 |
+| `text.action-active` on `surface.base` | 4.5 | 10.44 | 16.59 |
+| `text.action-active` on `surface.raised` | 4.5 | 10.44 | 14.85 |
 | `text.on-action` on `action.primary` | 4.5 | 6.30 | 6.39 |
 | `text.on-action` on `action.primary-hover` | 4.5 | 8.57 | 8.62 |
 | `text.on-action` on `action.primary-active` | 4.5 | 10.44 | 11.74 |
