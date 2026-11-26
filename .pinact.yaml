@@ -1,0 +1,9 @@
+# pinact's configuration (https://github.com/suzuki-shunsuke/pinact).
+# Fazon's reusable workflow has no release tag to name in a version comment until the framework's
+# M5, so pinact can't verify its pin; scripts/check-framework-pin.sh (ADAPTER-003) checks instead
+# that the full SHA it names is the commit the packages and the verifier image name.
+---
+version: 3
+ignore_actions:
+  - name: gergodrazsdik/fazon/\.github/workflows/verify\.yml
+    ref: "[0-9a-f]{40}"

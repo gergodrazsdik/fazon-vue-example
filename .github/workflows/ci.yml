@@ -1,9 +1,9 @@
----
 # The library's checks: the framework pins (ADAPTER-003); on the runner, install, `fazon sync
-# --check`, ESLint and Stylelint with Fazon's rules, the type-check, the browser tests (the
-# generated contract tests and the behaviour tests) and the builds; and `fazon verify`, every check
-# in the pinned verifier image, with its run record as an artifact. The framework's reusable
-# verify.yml replaces the library and verify jobs once it exists (the framework's M1 step 9).
+# --check`, ESLint and Stylelint with Fazon's rules, the type-check of every file (stories and tests
+# too), the browser tests, the builds and publint, which the reusable workflow doesn't run; and
+# Fazon's reusable verify.yml at the pinned framework commit: every check in the pinned verifier
+# image, the run's summary on the pull request, and its record and builds as artifacts.
+---
 name: ci
 
 on:
@@ -78,40 +78,12 @@ jobs:
           pnpm pack --pack-destination "$RUNNER_TEMP/package"
           pnpm exec publint run "$RUNNER_TEMP"/package/*.tgz
 
-  verify:
-    name: verify
-    runs-on: ubuntu-24.04
-    timeout-minutes: 30
+  # The reusable workflow, at the framework commit the packages and the image name (ADAPTER-003).
+  # Until M5 the install builds that commit from source first (scripts/framework.sh).
+  fazon:
+    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e
     permissions:
       contents: read
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version-file: .node-version
-      # The exact pnpm version package.json's packageManager names; no third-party setup action.
-      - name: Install pnpm
-        run: npm install -g "pnpm@$(jq -r '.packageManager | sub("^pnpm@"; "")' package.json)"  # zizmor: ignore[adhoc-packages]
-      # Temporary, until the framework's packages install as git dependencies.
-      - name: Build the pinned framework commit
-        run: scripts/framework.sh
-      # On the runner, which is linux/amd64 like the image: verify mounts them read-only into it.
-      - name: Install the dependencies (lockfile only)
-        run: pnpm install --frozen-lockfile
-      # Until the reusable verify.yml (the framework's M1 step 9) runs it. Podman, as on the
-      # maintainer's laptop; the image is pulled by the digest in fazon.yaml.
-      - name: fazon verify (every check, in the verifier image)
-        env:
-          FAZON_CONTAINER_RUNTIME: podman
-        run: pnpm exec fazon verify --no-judge
-      - name: Upload the run record (captures, diffs, logs, reports, the Storybook build)
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: fazon-verify-run
-          path: .fazon/runs/
-          include-hidden-files: true
-          if-no-files-found: error
-          retention-days: 14
+      pull-requests: write # only its comment job uses it
+    with:
+      install-command: scripts/framework.sh && pnpm install --frozen-lockfile

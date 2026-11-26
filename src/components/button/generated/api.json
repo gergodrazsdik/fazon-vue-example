@@ -7,6 +7,7 @@
   "components": {
     "Button": {
       "file": "Button.vue",
+      "name": "FzButton",
       "props": {
         "variant": {
           "type": "enum",

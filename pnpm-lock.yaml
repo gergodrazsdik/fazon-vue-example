@@ -172,8 +172,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@fazon/core': file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core
-  '@fazon/adapter-vue': file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue
+  '@fazon/core': file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core
+  '@fazon/adapter-vue': file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue
 
 importers:
 
@@ -187,8 +187,8 @@ importers:
         version: 2.11.0(vue@3.5.45(typescript@6.0.3))
     devDependencies:
       '@fazon/adapter-vue':
-        specifier: file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue
-        version: file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+        specifier: file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue
+        version: file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       '@storybook/vue3-vite':
         specifier: 10.6.7
         version: 10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3))
@@ -208,8 +208,8 @@ importers:
         specifier: 10.12.1
         version: 10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0))
       fazon:
-        specifier: file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/cli
-        version: file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+        specifier: file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli
+        version: file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       lucide-static:
         specifier: 1.76.0
         version: 1.76.0
@@ -574,8 +574,8 @@ packages:
     resolution: {integrity: sha512-IkO+/KEUvwbVpiURZg+P7zF74z5Jxe0UgJxVni+RtoHQ6IZieXaO02kmadomap/q+l6bc/jdPGGqTjhuZnuz1Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@fazon/adapter-vue@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue':
-    resolution: {directory: .fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue, type: directory}
+  '@fazon/adapter-vue@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue':
+    resolution: {directory: .fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue, type: directory}
     engines: {node: '>=26'}
     peerDependencies:
       '@storybook/vue3-vite': 10.6.7
@@ -587,8 +587,8 @@ packages:
       vite: 8.3.8
       vitest: 5.1.1
 
-  '@fazon/core@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core':
-    resolution: {directory: .fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core, type: directory}
+  '@fazon/core@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core':
+    resolution: {directory: .fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core, type: directory}
     engines: {node: '>=26'}
     peerDependencies:
       stylelint: ^18.0.0
@@ -1835,8 +1835,8 @@ packages:
   fast-uri@3.1.9:
     resolution: {integrity: sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==}
 
-  fazon@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/cli:
-    resolution: {directory: .fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/cli, type: directory}
+  fazon@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli:
+    resolution: {directory: .fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli, type: directory}
     engines: {node: '>=26'}
     hasBin: true
 
@@ -3199,10 +3199,10 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@fazon/adapter-vue@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)':
+  '@fazon/adapter-vue@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.15.0(supports-color@7.2.0))
-      '@fazon/core': file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core(stylelint@18.0.0)
+      '@fazon/core': file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core(stylelint@18.0.0)
       '@storybook/vue3-vite': 10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3))
       '@vitest/browser-playwright': 5.1.1(playwright@1.65.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       eslint: 10.15.0(supports-color@7.2.0)
@@ -3221,7 +3221,7 @@ snapshots:
       - postcss
       - supports-color
 
-  '@fazon/core@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core(stylelint@18.0.0)':
+  '@fazon/core@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core(stylelint@18.0.0)':
     dependencies:
       '@arethetypeswrong/core': 0.18.5
       ajv: 8.20.0
@@ -4443,10 +4443,10 @@ snapshots:
 
   fast-uri@3.1.9: {}
 
-  fazon@file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1):
+  fazon@file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1):
     dependencies:
-      '@fazon/adapter-vue': file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
-      '@fazon/core': file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/core(stylelint@18.0.0)
+      '@fazon/adapter-vue': file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+      '@fazon/core': file:.fazon-framework/b9d239d2a90a6b9e38c9416f24dbbec603a2ea2e/packages/core(stylelint@18.0.0)
     transitivePeerDependencies:
       - '@storybook/vue3-vite'
       - '@typescript/native'
