@@ -1,0 +1,12 @@
+{
+  "fazon": 0,
+  "component": "Dialog",
+  "spec": {
+    "path": "specs/dialog.md",
+    "hash": "sha256:8ee096326adbcab5c97cfae63daa9977b9ba874a094dd735f8bedb251e4ed30b"
+  },
+  "api": {
+    "hash": "sha256:7a01b63fb31671a699b5ce8db10666db0f4aeb6a79ce22b0e5f0924905007f5a",
+    "approved": "2026-11-26"
+  }
+}

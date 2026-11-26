@@ -5,6 +5,86 @@ name: Dialog
 tier: composite
 summary: Asks for a decision or shows focused content on top of the page.
 uses: [Button]
+props:
+  open:
+    type: boolean
+    model: true
+    default: false
+    description: Whether the dialog is open. Escape, a click on the dimmed page and the close button set it to false.
+  size:
+    type: enum
+    values: [sm, md, lg]
+    default: md
+    description: The size of the dialog.
+slots:
+  default:
+    required: true
+    description: The Overlay and Content parts, and optionally the Trigger part.
+forward: Content
+parts:
+  Trigger:
+    parent: Dialog
+    count: optional
+    description: The button that opens the dialog and receives focus again when it closes.
+    slots:
+      default:
+        required: true
+        description: The trigger's label, or with asChild a single Button that acts as the trigger.
+  Overlay:
+    parent: Dialog
+    count: one
+    portal: true
+    description: Dims the page behind the dialog. A click on it closes the dialog.
+  Content:
+    parent: Dialog
+    count: one
+    portal: true
+    description: The dialog's surface, shown over the dimmed page while open.
+    slots:
+      default:
+        required: true
+        description: The Title and Body parts, and optionally the Description, Footer and Close parts.
+  Title:
+    parent: Content
+    count: one
+    description: The title, which names the dialog. It stays in view while the body scrolls.
+    slots:
+      default:
+        required: true
+        description: The title text.
+  Description:
+    parent: Content
+    count: optional
+    description: Text that describes the dialog.
+    slots:
+      default:
+        required: true
+        description: The description text.
+  Body:
+    parent: Content
+    count: one
+    description: The main content. It scrolls inside the dialog when taller than the space available.
+    slots:
+      default:
+        required: true
+        description: The body content.
+  Footer:
+    parent: Content
+    count: optional
+    description: The actions, kept in view while the body scrolls.
+    slots:
+      default:
+        required: true
+        description: The actions, usually Buttons, with the primary action last.
+  Close:
+    parent: Content
+    count: optional
+    description: The icon-only button that closes the dialog. It shows a built-in, decorative close icon.
+    props:
+      label:
+        type: string
+        default: Close
+        description: The button's accessible name.
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
 a11y:
@@ -15,6 +95,14 @@ a11y:
   focus:
     trap: true
     restore: true
+extensions:
+  vue:
+    reason: A Button used as the trigger must be the trigger element itself; without asChild it would be a button nested inside a button.
+    add:
+      parts.Trigger.props.asChild:
+        type: boolean
+        default: false
+        description: Makes the slot's single child the trigger, instead of rendering a button around it.
 ---
 
 ## Purpose
