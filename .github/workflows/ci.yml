@@ -81,7 +81,7 @@ jobs:
   # The reusable workflow, at the framework commit the packages and the image name (ADAPTER-003).
   # Until M5 the install builds that commit from source first (scripts/framework.sh).
   fazon:
-    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@b353b849decf73ff446cff7bb357fe2b52c81825
+    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@ff1bccfbefd3d9a824c1db6da1487e95ed6e0547
     permissions:
       contents: read
       pull-requests: write # only its comment job uses it
