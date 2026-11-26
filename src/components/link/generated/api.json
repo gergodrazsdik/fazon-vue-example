@@ -8,9 +8,34 @@
     "Link": {
       "file": "Link.vue",
       "name": "FzLink",
-      "props": {},
+      "props": {
+        "href": {
+          "type": "string",
+          "required": true
+        },
+        "variant": {
+          "type": "enum",
+          "values": [
+            "default",
+            "subtle",
+            "standalone"
+          ],
+          "required": false,
+          "default": "default"
+        },
+        "external": {
+          "type": "boolean",
+          "required": false,
+          "default": false
+        }
+      },
       "events": {},
-      "slots": {},
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        }
+      },
       "exposed": {}
     }
   }

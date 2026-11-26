@@ -4,6 +4,25 @@ fazon: 0
 name: Link
 tier: primitive
 summary: Navigates to another page or to a place on the current page.
+props:
+  href:
+    type: string
+    required: true
+    description: "The destination: another page, or a place on the current page."
+  variant:
+    type: enum
+    values: [default, subtle, standalone]
+    default: default
+    description: Default is in the action colour; subtle takes the surrounding text's colour, for dense lists and footers; standalone is for a link on its own line.
+  external:
+    type: boolean
+    default: false
+    description: Opens in a new tab, shows an icon after the text and tells assistive technology that it opens in a new tab.
+slots:
+  default:
+    required: true
+    description: The text, which says where the link goes.
+forward: root
 # The API (props, events, slots, methods, forward, form, parts) comes from `fazon propose` and
 # `fazon approve`; states, a11y, fixtures, matrix and tokens build on it.
 states: [default, hover, focus-visible, active]
