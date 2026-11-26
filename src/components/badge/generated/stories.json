@@ -1,0 +1,33 @@
+{
+  "fazon": 0,
+  "component": "Badge",
+  "spec": "specs/badge.md",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "viewport": {
+    "width": 1024,
+    "height": 768,
+    "scale": 2
+  },
+  "fixtures": {
+    "empty": {}
+  },
+  "stories": [
+    {
+      "name": "badge--empty--default",
+      "storybookId": "badge--empty-default",
+      "grid": "axes",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "default"
+      },
+      "judge": [
+        "light",
+        "dark"
+      ]
+    }
+  ]
+}
