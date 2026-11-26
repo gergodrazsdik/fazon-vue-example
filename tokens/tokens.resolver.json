@@ -1,0 +1,25 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "name": "fazon-vue-example",
+  "version": "2025.10",
+  "description": "The example library's token set: raw tokens, theme-independent roles, and a theme modifier.",
+  "sets": {
+    "raw": {
+      "sources": [{ "$ref": "raw.json" }]
+    },
+    "roles": {
+      "sources": [{ "$ref": "roles.json" }]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Colour theme",
+      "contexts": {
+        "light": [{ "$ref": "themes/light.json" }],
+        "dark": [{ "$ref": "themes/dark.json" }]
+      },
+      "default": "light"
+    }
+  },
+  "resolutionOrder": [{ "$ref": "#/sets/raw" }, { "$ref": "#/sets/roles" }, { "$ref": "#/modifiers/theme" }]
+}
