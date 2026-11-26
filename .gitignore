@@ -46,3 +46,9 @@ storybook-static/
 # out of git (the committed per-component provenance files live elsewhere).
 .fazon/
 fazon.local.yaml
+
+# The pinned framework commit, built by scripts/framework.sh for package.json's file: dependencies.
+.fazon-framework/
+
+# Vitest's browser mode: screenshots of failed tests
+.vitest/

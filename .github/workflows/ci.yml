@@ -1,0 +1,78 @@
+---
+# The library's checks: the framework pins (ADAPTER-003), then install, `fazon sync --check`,
+# ESLint and Stylelint with Fazon's rules, the type-check, the browser tests (the generated
+# contract tests and the behaviour tests) and the builds. The framework's reusable verify.yml
+# replaces the library job once it exists (the framework's M1 step 9).
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  framework-pin:
+    name: framework-pin
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: The packages, the workflow and the image name one framework commit
+        run: scripts/check-framework-pin.sh
+
+  library:
+    name: library
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .node-version
+      # The exact pnpm version package.json's packageManager names; no third-party setup action.
+      - name: Install pnpm
+        run: npm install -g "pnpm@$(jq -r '.packageManager | sub("^pnpm@"; "")' package.json)"  # zizmor: ignore[adhoc-packages]
+      # Temporary, until the framework's packages install as git dependencies.
+      - name: Build the pinned framework commit
+        run: scripts/framework.sh
+      - name: Install the dependencies (lockfile only)
+        run: pnpm install --frozen-lockfile
+      - name: Generated files are current (fazon sync --check)
+        run: pnpm exec fazon sync --check
+      - name: Lint (ESLint and Stylelint, with Fazon's rules)
+        if: ${{ !cancelled() }}
+        run: pnpm run lint
+      - name: Type-check (vue-tsc)
+        if: ${{ !cancelled() }}
+        run: pnpm run typecheck
+      - name: Install Chromium for Playwright
+        if: ${{ !cancelled() }}
+        run: pnpm exec playwright install --with-deps --only-shell chromium
+      - name: Test (Vitest in browser mode)
+        if: ${{ !cancelled() }}
+        run: pnpm test
+      - name: Build the library (vite build)
+        if: ${{ !cancelled() }}
+        run: pnpm run build
+      - name: Build Storybook
+        if: ${{ !cancelled() }}
+        run: pnpm run build-storybook
+      - name: Pack and check the package (publint)
+        if: ${{ !cancelled() }}
+        run: |
+          pnpm pack --pack-destination "$RUNNER_TEMP/package"
+          pnpm exec publint run "$RUNNER_TEMP"/package/*.tgz

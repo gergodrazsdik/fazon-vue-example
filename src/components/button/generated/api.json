@@ -1,0 +1,72 @@
+{
+  "fazon": 0,
+  "adapter": "vue",
+  "component": "Button",
+  "spec": "specs/button.md",
+  "forward": "Button",
+  "components": {
+    "Button": {
+      "file": "Button.vue",
+      "props": {
+        "variant": {
+          "type": "enum",
+          "values": [
+            "primary",
+            "secondary",
+            "ghost"
+          ],
+          "required": false,
+          "default": "primary"
+        },
+        "size": {
+          "type": "enum",
+          "values": [
+            "sm",
+            "md",
+            "lg"
+          ],
+          "required": false,
+          "default": "md"
+        },
+        "disabled": {
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        "loading": {
+          "type": "boolean",
+          "required": false,
+          "default": false
+        },
+        "type": {
+          "type": "enum",
+          "values": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "required": false,
+          "default": "button"
+        }
+      },
+      "events": {
+        "click": {}
+      },
+      "slots": {
+        "default": {
+          "required": true,
+          "props": {}
+        },
+        "icon": {
+          "required": false,
+          "props": {}
+        }
+      },
+      "exposed": {
+        "focus": {
+          "params": {}
+        }
+      }
+    }
+  }
+}

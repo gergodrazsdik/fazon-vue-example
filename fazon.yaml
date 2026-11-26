@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/gergodrazsdik/fazon/main/docs/spec/schemas/config.schema.json
+# Fazon's configuration (https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/config.md).
+# `image` is the verifier image the framework's CI built from the pinned framework commit, by
+# digest; scripts/check-framework-pin.sh checks that it names the same commit as the packages.
+---
+fazon: 0
+adapter: vue
+image: ghcr.io/gergodrazsdik/fazon-verifier@sha256:14e97efe80738cf23d45b37a124ce0ce3811c17e9694866696b1c295ce3f3f80
+
+tokens:
+  prefix: fz

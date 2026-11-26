@@ -1,0 +1,20 @@
+---
+# One package, not a workspace: pnpm reads its settings from this file.
+
+# A release must be 7 days old before pnpm installs it, as Dependabot's cooldown.
+minimumReleaseAge: 10080
+
+# No dependency runs install scripts unless it's listed here.
+onlyBuiltDependencies: []
+
+# Install scripts pnpm is told not to run, so an install doesn't stop at them: esbuild's (from
+# Storybook and Vite) only checks its binary, which arrives in its platform package without a script.
+allowBuilds:
+  esbuild: false
+
+# The framework's packages depend on each other with `workspace:*`, which resolves only in the
+# framework's own workspace: these point those dependencies at the same build as package.json.
+# Temporary, with scripts/framework.sh.
+overrides:
+  "@fazon/core": "file:.fazon-framework/cef3c6712a40db7457296cf0d250d84ebc661c21/packages/core"
+  "@fazon/adapter-vue": "file:.fazon-framework/cef3c6712a40db7457296cf0d250d84ebc661c21/packages/adapter-vue"

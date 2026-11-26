@@ -1,0 +1,84 @@
+{
+  "$description": "Role tokens that are the same in every theme. Components reference role tokens only.",
+  "space": {
+    "inset": {
+      "xs": { "$type": "dimension", "$value": "{space.1}" },
+      "sm": { "$type": "dimension", "$value": "{space.2}" },
+      "md": { "$type": "dimension", "$value": "{space.3}" },
+      "lg": { "$type": "dimension", "$value": "{space.4}" },
+      "xl": { "$type": "dimension", "$value": "{space.6}" }
+    },
+    "gap": {
+      "xs": { "$type": "dimension", "$value": "{space.1}" },
+      "sm": { "$type": "dimension", "$value": "{space.2}" },
+      "md": { "$type": "dimension", "$value": "{space.3}" },
+      "lg": { "$type": "dimension", "$value": "{space.4}" }
+    }
+  },
+  "size": {
+    "control": {
+      "sm": { "$type": "dimension", "$value": "{size.8}" },
+      "md": { "$type": "dimension", "$value": "{size.10}" },
+      "lg": { "$type": "dimension", "$value": "{size.12}" }
+    },
+    "icon": {
+      "sm": { "$type": "dimension", "$value": "{size.4}" },
+      "md": { "$type": "dimension", "$value": "{size.5}" },
+      "lg": { "$type": "dimension", "$value": "{size.6}" }
+    },
+    "avatar": {
+      "sm": { "$type": "dimension", "$value": "{size.6}" },
+      "md": { "$type": "dimension", "$value": "{size.8}" },
+      "lg": { "$type": "dimension", "$value": "{size.12}" }
+    }
+  },
+  "radius": {
+    "small": { "$type": "dimension", "$value": "{radius.1}" },
+    "control": { "$type": "dimension", "$value": "{radius.2}" },
+    "surface": { "$type": "dimension", "$value": "{radius.3}" },
+    "dialog": { "$type": "dimension", "$value": "{radius.4}" },
+    "full": { "$type": "dimension", "$value": "{radius.max}" }
+  },
+  "border-width": {
+    "default": { "$type": "dimension", "$value": "{border-width.1}" },
+    "focus": { "$type": "dimension", "$value": "{border-width.2}" }
+  },
+  "outline-offset": {
+    "focus": { "$type": "dimension", "$value": "{space.0-5}" }
+  },
+  "font-family": {
+    "body": { "$type": "fontFamily", "$value": "{font-family.inter}" }
+  },
+  "font-size": {
+    "small": { "$type": "dimension", "$value": "{font-size.1}" },
+    "body": { "$type": "dimension", "$value": "{font-size.2}" },
+    "large": { "$type": "dimension", "$value": "{font-size.3}" },
+    "title": { "$type": "dimension", "$value": "{font-size.4}" }
+  },
+  "font-weight": {
+    "body": { "$type": "fontWeight", "$value": "{font-weight.400}" },
+    "medium": { "$type": "fontWeight", "$value": "{font-weight.500}" },
+    "strong": { "$type": "fontWeight", "$value": "{font-weight.600}" }
+  },
+  "line-height": {
+    "tight": { "$type": "number", "$value": "{line-height.1}" },
+    "body": { "$type": "number", "$value": "{line-height.2}" }
+  },
+  "shadow": {
+    "raised": { "$type": "shadow", "$value": "{shadow.1}" },
+    "popover": { "$type": "shadow", "$value": "{shadow.2}" },
+    "dialog": { "$type": "shadow", "$value": "{shadow.3}" }
+  },
+  "motion": {
+    "duration": {
+      "fast": { "$type": "duration", "$value": "{duration.100}" },
+      "normal": { "$type": "duration", "$value": "{duration.150}" },
+      "slow": { "$type": "duration", "$value": "{duration.250}" }
+    },
+    "easing": {
+      "standard": { "$type": "cubicBezier", "$value": "{easing.standard}" },
+      "enter": { "$type": "cubicBezier", "$value": "{easing.decelerate}" },
+      "exit": { "$type": "cubicBezier", "$value": "{easing.accelerate}" }
+    }
+  }
+}

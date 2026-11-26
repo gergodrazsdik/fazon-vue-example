@@ -1,0 +1,820 @@
+{
+  "fazon": 0,
+  "component": "Button",
+  "spec": "specs/button.md",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "viewport": {
+    "width": 1024,
+    "height": 768,
+    "scale": 2
+  },
+  "fixtures": {
+    "label": {
+      "slots": {
+        "default": "Save changes"
+      }
+    },
+    "with-icon": {
+      "slots": {
+        "default": "Save changes",
+        "icon": {
+          "icon": "check"
+        }
+      }
+    },
+    "long-label": {
+      "slots": {
+        "default": "Save changes and notify every member of the workspace"
+      },
+      "frame": {
+        "width": 160
+      }
+    }
+  },
+  "stories": [
+    {
+      "name": "button--label--variant-primary--size-sm--default",
+      "storybookId": "button--label-variant-primary-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--default",
+      "storybookId": "button--label-variant-primary-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-lg--default",
+      "storybookId": "button--label-variant-primary-size-lg-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "lg"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "lg"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-sm--default",
+      "storybookId": "button--label-variant-secondary-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--default",
+      "storybookId": "button--label-variant-secondary-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-lg--default",
+      "storybookId": "button--label-variant-secondary-size-lg-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "lg"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "lg"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-sm--default",
+      "storybookId": "button--label-variant-ghost-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--default",
+      "storybookId": "button--label-variant-ghost-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-lg--default",
+      "storybookId": "button--label-variant-ghost-size-lg-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "lg"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "lg"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--hover",
+      "storybookId": "button--label-variant-primary-size-md-hover",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--hover",
+      "storybookId": "button--label-variant-secondary-size-md-hover",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--hover",
+      "storybookId": "button--label-variant-ghost-size-md-hover",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--focus-visible",
+      "storybookId": "button--label-variant-primary-size-md-focus-visible",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "focus-visible"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--focus-visible",
+      "storybookId": "button--label-variant-secondary-size-md-focus-visible",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "focus-visible"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--focus-visible",
+      "storybookId": "button--label-variant-ghost-size-md-focus-visible",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "focus-visible"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--active",
+      "storybookId": "button--label-variant-primary-size-md-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "active"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--active",
+      "storybookId": "button--label-variant-secondary-size-md-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "active"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--active",
+      "storybookId": "button--label-variant-ghost-size-md-active",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "active"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "pointer-down",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--disabled",
+      "storybookId": "button--label-variant-primary-size-md-disabled",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "disabled"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "disabled": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--disabled",
+      "storybookId": "button--label-variant-secondary-size-md-disabled",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "disabled"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "disabled": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--disabled",
+      "storybookId": "button--label-variant-ghost-size-md-disabled",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "disabled"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "disabled": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-primary--size-md--loading",
+      "storybookId": "button--label-variant-primary-size-md-loading",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "loading"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "loading": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-secondary--size-md--loading",
+      "storybookId": "button--label-variant-secondary-size-md-loading",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "secondary",
+        "size": "md"
+      },
+      "state": {
+        "name": "loading"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "secondary",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "loading": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-md--loading",
+      "storybookId": "button--label-variant-ghost-size-md-loading",
+      "grid": "states",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "md"
+      },
+      "state": {
+        "name": "loading"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "loading": true
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--with-icon--variant-primary--size-md--default",
+      "storybookId": "button--with-icon-variant-primary-size-md-default",
+      "grid": "fixtures",
+      "fixture": "with-icon",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--long-label--variant-primary--size-md--default",
+      "storybookId": "button--long-label-variant-primary-size-md-default",
+      "grid": "fixtures",
+      "fixture": "long-label",
+      "axes": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "primary",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "button--label--variant-ghost--size-lg--hover",
+      "storybookId": "button--label-variant-ghost-size-lg-hover",
+      "grid": "include",
+      "fixture": "label",
+      "axes": {
+        "variant": "ghost",
+        "size": "lg"
+      },
+      "state": {
+        "name": "hover"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "variant": "ghost",
+            "size": "lg"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "root"
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    }
+  ]
+}
