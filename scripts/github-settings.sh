@@ -4,7 +4,8 @@
 # Usage: scripts/github-settings.sh [--check] [--no-required-checks] <owner/repo>
 #   --check               only read the settings and report differences (exit 1 if any)
 #   --no-required-checks  leave the required status checks out of the rulesets; use it on a
-#                         brand-new repo until `lint`, `zizmor` and `pr-title` have run once
+#                         brand-new repo until its required checks (`lint`, `zizmor`, `pr-title`,
+#                         `framework-pin`, `library`, `fazon / verify`) have run once
 #
 # Covers: general and merge settings, security features, Actions permissions, labels, topics and
 # the rulesets in .github/rulesets/. It holds no personal data, so it works for any fork.

@@ -29,7 +29,10 @@
         "required_status_checks": [
           { "context": "lint", "integration_id": 15368 },
           { "context": "zizmor", "integration_id": 15368 },
-          { "context": "pr-title", "integration_id": 15368 }
+          { "context": "pr-title", "integration_id": 15368 },
+          { "context": "framework-pin", "integration_id": 15368 },
+          { "context": "library", "integration_id": 15368 },
+          { "context": "fazon / verify", "integration_id": 15368 }
         ]
       }
     }
