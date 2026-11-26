@@ -1,8 +1,9 @@
 ---
-# New releases wait 7 days before Dependabot proposes them. The linters pinned
-# in scripts/install-ci-tools.sh and lint.yml are outside Dependabot's reach:
-# `just tool-updates` reports them. The npm ecosystem joins with the library's
-# package.json.
+# New releases wait 7 days before Dependabot proposes them, as pnpm's
+# minimumReleaseAge does. The linters pinned in scripts/install-ci-tools.sh
+# and lint.yml are outside Dependabot's reach: `just tool-updates` reports them.
+# The framework's packages move with the framework pin, by hand
+# (AGENTS.md, "Consuming the framework").
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -17,3 +18,25 @@ updates:
     groups:
       github-actions:
         patterns: ["*"]
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: build
+    labels: ["dependencies"]
+    ignore:
+      # The framework's packages: they move with the framework pin.
+      - dependency-name: fazon
+      - dependency-name: "@fazon/*"
+      # TypeScript 7.0 ships no JavaScript API, which vue-tsc and vue-component-meta need; the
+      # framework moves to 7.1 first (its T-0091), and this repo with it.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+    groups:
+      npm-development:
+        dependency-type: development
+      npm-production:
+        dependency-type: production
