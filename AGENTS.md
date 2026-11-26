@@ -49,7 +49,7 @@ Until M5 this repo pins **one framework commit**. The CLI and Vue adapter (git d
 
 - **No outside contributions** before the publishing decision: no outside pull requests, no contributor agreement, no CLA assistant. Issues are off here; they go to the framework repository ([CONTRIBUTING.md](CONTRIBUTING.md)).
 - Everything here is **MIT-0** ([LICENSE](LICENSE)). Third-party material keeps its license and its notice in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); add an entry before adding such material, and only material whose license allows it.
-- Files Fazon writes into this repo carry no license header or copyright line ([license terms](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/licensing.md)). The scripts in `scripts/`, copied from the framework, carry `SPDX-License-Identifier: MIT-0`.
+- No file in this repo carries a license header or copyright line, whether a person or Fazon wrote it: the MIT-0 `LICENSE` covers the repository ([license terms](https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/licensing.md), [ADR 0021](https://github.com/gergodrazsdik/fazon/blob/main/docs/adr/0021-settled-questions.md)).
 
 ## Commands
 

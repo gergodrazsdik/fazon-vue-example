@@ -1,5 +1,4 @@
 #!/bin/sh
-# SPDX-License-Identifier: MIT-0
 # Conventional Commits checks for commit messages and pull request titles.
 # Usage:
 #   scripts/check-commit-msg.sh <commit-message-file>
