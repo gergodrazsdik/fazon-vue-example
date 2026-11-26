@@ -12,21 +12,337 @@
     "scale": 2
   },
   "fixtures": {
-    "empty": {}
+    "label": {
+      "slots": {
+        "default": "New"
+      }
+    },
+    "with-icon": {
+      "slots": {
+        "default": "New",
+        "icon": {
+          "icon": "check"
+        }
+      }
+    },
+    "long-label": {
+      "slots": {
+        "default": "Waiting for review by the design team"
+      },
+      "frame": {
+        "width": 120
+      }
+    }
   },
   "stories": [
     {
-      "name": "badge--empty--default",
-      "storybookId": "badge--empty-default",
+      "name": "badge--label--tone-neutral--size-sm--default",
+      "storybookId": "badge--label-tone-neutral-size-sm-default",
       "grid": "axes",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "label",
+      "axes": {
+        "tone": "neutral",
+        "size": "sm"
+      },
       "state": {
         "name": "default"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "neutral",
+            "size": "sm"
+          }
+        }
+      ],
       "judge": [
         "light",
         "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-neutral--size-md--default",
+      "storybookId": "badge--label-tone-neutral-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "neutral",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "neutral",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-info--size-sm--default",
+      "storybookId": "badge--label-tone-info-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "info",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "info",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-info--size-md--default",
+      "storybookId": "badge--label-tone-info-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "info",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "info",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-success--size-sm--default",
+      "storybookId": "badge--label-tone-success-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "success",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "success",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-success--size-md--default",
+      "storybookId": "badge--label-tone-success-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "success",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "success",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-warning--size-sm--default",
+      "storybookId": "badge--label-tone-warning-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "warning",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "warning",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-warning--size-md--default",
+      "storybookId": "badge--label-tone-warning-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "warning",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "warning",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-danger--size-sm--default",
+      "storybookId": "badge--label-tone-danger-size-sm-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "danger",
+        "size": "sm"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "danger",
+            "size": "sm"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--label--tone-danger--size-md--default",
+      "storybookId": "badge--label-tone-danger-size-md-default",
+      "grid": "axes",
+      "fixture": "label",
+      "axes": {
+        "tone": "danger",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "danger",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "badge--with-icon--tone-neutral--size-md--default",
+      "storybookId": "badge--with-icon-tone-neutral-size-md-default",
+      "grid": "fixtures",
+      "fixture": "with-icon",
+      "axes": {
+        "tone": "neutral",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "neutral",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "badge--long-label--tone-neutral--size-md--default",
+      "storybookId": "badge--long-label-tone-neutral-size-md-default",
+      "grid": "fixtures",
+      "fixture": "long-label",
+      "axes": {
+        "tone": "neutral",
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "tone": "neutral",
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light"
       ]
     }
   ]
