@@ -1,0 +1,33 @@
+{
+  "fazon": 0,
+  "component": "Dialog",
+  "spec": "specs/dialog.md",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "viewport": {
+    "width": 1024,
+    "height": 768,
+    "scale": 2
+  },
+  "fixtures": {
+    "empty": {}
+  },
+  "stories": [
+    {
+      "name": "dialog--empty--default",
+      "storybookId": "dialog--empty-default",
+      "grid": "axes",
+      "fixture": "empty",
+      "axes": {},
+      "state": {
+        "name": "default"
+      },
+      "judge": [
+        "light",
+        "dark"
+      ]
+    }
+  ]
+}
