@@ -15,6 +15,7 @@ A conflict between this file and a component's spec is settled by the spec.
 |---|---|
 | A component lives in `src/components/<name>/`, where `<name>` is the spec's kebab-case name. | Enforced: the harness (PERM-002) |
 | The component is `<Component>.vue`; each part is `<Component><Part>.vue` (`Tabs.vue`, `TabsTrigger.vue`). Helpers are `*.ts` in the same directory, and behaviour tests are `<Component>.test.ts`. | Enforced: the adapter's file patterns (PERM-003) and the `test` check (`missing-behaviour`) |
+| Behaviour tests render the component with `render` from `vitest-browser-vue` (pinned at 3.1.0 in `package.json`) and query it through the returned screen, in Vitest's browser mode. | Guidance |
 | Styles live in the single-file component's `<style scoped>` block. A part shared by several files may use a `*.css` file in the directory. | Guidance |
 | `generated/` belongs to the harness: story files, contract tests, the story manifest, provenance. | Enforced: the harness (PERM-002) and the `build` check (`generated`) |
 | Code shared between components, and new dependencies, need a person: the run stops and says so. | Enforced: the harness |
@@ -26,7 +27,7 @@ The spec fixes the API; the adapter maps it to Vue ([API mapping](https://github
 | Rule | Kept by |
 |---|---|
 | Props, events, slots and methods are camelCase; enum values and states are kebab-case. | Enforced: `spec check` (SPEC-001) |
-| A component's Vue name is its spec name with the prefix `Fz`, set with `defineOptions({ name: "FzButton" })`, so it is never a single word that an HTML element such as `button` could clash with. The file, the export and the spec keep the spec's name. | Enforced: `lint` (eslint-plugin-vue's `vue/multi-word-component-names`) |
+| Every component and part file declares its Vue name: the spec's name with the prefix `Fz`, set with `defineOptions({ name })`. `Button.vue` declares `FzButton`, and a part takes the prefix too: `TabsTrigger.vue` declares `FzTabsTrigger`. So a name is never a single word that an HTML element such as `button` could clash with. The file, the export and the spec keep the spec's name. | Enforced: `lint` (eslint-plugin-vue's `vue/multi-word-component-names`) |
 | A boolean prop is named for the state it turns on, without `is` or `has`: `disabled`, `loading`, `open`. | Guidance |
 | A prop with a default in the spec declares it with `withDefaults`, a boolean's `false` too: vue-component-meta reads no default otherwise. | Enforced: `test` (`contract-api`) |
 | Visual emphasis is a `variant` enum. Size is a `size` enum of `sm`, `md` and `lg`, with `md` the default. | Guidance |
