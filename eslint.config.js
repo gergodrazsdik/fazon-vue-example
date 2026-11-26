@@ -6,7 +6,8 @@ import { defineConfig } from "eslint/config";
 import { fazonVueEslint } from "@fazon/adapter-vue/lint";
 
 export default defineConfig(fazonVueEslint(), {
-  // The framework's build that scripts/framework.sh makes (temporary, until git dependencies).
+  // The framework's build that scripts/framework.sh makes (temporary, until git dependencies), and
+  // Fazon's run records, which hold the static Storybook builds of verify runs.
   name: "fazon-vue-example/ignores",
-  ignores: [".fazon-framework/"],
+  ignores: [".fazon-framework/", ".fazon/"],
 });

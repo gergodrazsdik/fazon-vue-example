@@ -36,7 +36,7 @@
     "lint": "eslint . && stylelint \"src/components/**/*.{vue,css}\"",
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run",
-    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "build": "vite build",
     "build-storybook": "storybook build",
     "storybook": "storybook dev --port 6006"
   },
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@fazon/adapter-vue": "file:.fazon-framework/bd8b0b57af6253a94132f5ef4c2b189d5aabea00/packages/adapter-vue",
     "@storybook/vue3-vite": "10.6.7",
+    "@types/node": "26.6.6",
     "@vitejs/plugin-vue": "6.0.11",
     "@vitest/browser-playwright": "5.1.1",
     "eslint": "10.15.0",
