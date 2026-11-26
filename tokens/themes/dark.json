@@ -14,7 +14,7 @@
       "primary": { "$type": "color", "$value": "{color.neutral.100}" },
       "secondary": { "$type": "color", "$value": "{color.neutral.400}" },
       "disabled": { "$type": "color", "$value": "{color.neutral.600}" },
-      "action": { "$type": "color", "$value": "{color.blue.400}" },
+      "action": { "$type": "color", "$value": "{color.blue.200}" },
       "on-action": { "$type": "color", "$value": "{color.neutral.950}" },
       "inverse": { "$type": "color", "$value": "{color.neutral.900}" }
     },

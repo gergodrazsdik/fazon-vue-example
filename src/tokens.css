@@ -218,7 +218,7 @@
   --fz-color-text-primary: var(--fz-color-neutral-100);
   --fz-color-text-secondary: var(--fz-color-neutral-400);
   --fz-color-text-disabled: var(--fz-color-neutral-600);
-  --fz-color-text-action: var(--fz-color-blue-400);
+  --fz-color-text-action: var(--fz-color-blue-200);
   --fz-color-text-on-action: var(--fz-color-neutral-950);
   --fz-color-text-inverse: var(--fz-color-neutral-900);
   --fz-color-border-default: var(--fz-color-neutral-800);
