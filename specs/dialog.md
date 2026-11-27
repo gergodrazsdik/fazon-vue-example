@@ -141,6 +141,9 @@ matrix:
   exclude:
     - { state: closed, props: { size: sm } }
     - { state: closed, props: { size: lg } }
+  include:
+    - fixture: long-content
+      props: { size: lg }
 tokens:
   - part: Overlay
     use:

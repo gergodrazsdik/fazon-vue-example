@@ -3,10 +3,39 @@
   "component": "Dialog",
   "spec": {
     "path": "specs/dialog.md",
-    "hash": "sha256:5e540e4034f92007b1896aedd6be6572dba2949f8944f6a29a2b8ea561433728"
+    "hash": "sha256:353f7ad87aadcb5f37ae32bab6f024bb7c2fd54a777aa1fc7bd50fee24c9261f"
   },
   "api": {
     "hash": "sha256:006d68f4e7dbd313a9e000cd44af85ccefe18677c00ea0cc32cc51d2db68054d",
     "approved": "2026-11-26"
+  },
+  "generation": {
+    "framework": "0.0.0",
+    "accepted": "2026-11-27",
+    "runs": [
+      {
+        "id": "20261127T002527Z-dialog-6004",
+        "kind": "generate",
+        "status": "passed",
+        "iterations": 2,
+        "models": [
+          "claude-sonnet-5-5"
+        ],
+        "costUsd": 0.821299
+      },
+      {
+        "id": "20261127T004610Z-dialog-bdd6",
+        "kind": "feedback",
+        "status": "passed",
+        "iterations": 1,
+        "models": [
+          "claude-sonnet-5-5"
+        ],
+        "costUsd": 0.21127
+      }
+    ],
+    "handEdits": 0,
+    "costUsd": 1.032569,
+    "costEstimated": true
   }
 }

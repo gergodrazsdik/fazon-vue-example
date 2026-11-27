@@ -470,6 +470,30 @@
       "judge": [
         "light"
       ]
+    },
+    {
+      "name": "dialog--long-content--size-lg--default",
+      "storybookId": "dialog--long-content-size-lg-default",
+      "grid": "include",
+      "fixture": "long-content",
+      "axes": {
+        "size": "lg"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "lg"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
     }
   ]
 }
