@@ -3,10 +3,29 @@
   "component": "Link",
   "spec": {
     "path": "specs/link.md",
-    "hash": "sha256:266b93c3cccc1d7ca724e155bb7c08675e5c9e1497aef063d12f93d80027bfdc"
+    "hash": "sha256:7cf31a13c8a6e56917132ea5927d4e18c45236862bf5409880d2416ee4ef78ec"
   },
   "api": {
     "hash": "sha256:073aa76c9a061bcef587af449d3b7c7cc61b5dc46cc12066e6b52b3f610295bc",
     "approved": "2026-11-26"
+  },
+  "generation": {
+    "framework": "0.0.0",
+    "accepted": "2026-11-27",
+    "runs": [
+      {
+        "id": "20261127T000726Z-link-392e",
+        "kind": "generate",
+        "status": "passed",
+        "iterations": 2,
+        "models": [
+          "claude-sonnet-5-5"
+        ],
+        "costUsd": 0.453149
+      }
+    ],
+    "handEdits": 0,
+    "costUsd": 0.453149,
+    "costEstimated": true
   }
 }
