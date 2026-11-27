@@ -172,8 +172,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@fazon/core': file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core
-  '@fazon/adapter-vue': file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue
+  '@fazon/core': file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core
+  '@fazon/adapter-vue': file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue
 
 importers:
 
@@ -187,8 +187,8 @@ importers:
         version: 2.11.0(vue@3.5.45(typescript@6.0.3))
     devDependencies:
       '@fazon/adapter-vue':
-        specifier: file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue
-        version: file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+        specifier: file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue
+        version: file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       '@storybook/vue3-vite':
         specifier: 10.6.7
         version: 10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3))
@@ -208,8 +208,8 @@ importers:
         specifier: 10.12.1
         version: 10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0))
       fazon:
-        specifier: file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/cli
-        version: file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+        specifier: file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/cli
+        version: file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       lucide-static:
         specifier: 1.76.0
         version: 1.76.0
@@ -236,7 +236,7 @@ importers:
         version: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1)
       vitest:
         specifier: 5.1.1
-        version: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+        version: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       vitest-browser-vue:
         specifier: 3.1.0
         version: 3.1.0(@vue/compiler-dom@3.5.45)(@vue/server-renderer@3.5.45)(vitest@5.1.1)(vue@3.5.45(typescript@6.0.3))
@@ -257,6 +257,15 @@ packages:
 
   '@andrewbranch/untar.js@1.0.4':
     resolution: {integrity: sha512-pVXSwPsLuw8IGLo2Di0EaOfsk+ntVvpkk942J/sHYIkwvtKUakEcPh7HBgZ6tuimgzKSEHgCvO4XgQ05DEbwDw==}
+
+  '@anthropic-ai/sdk@1.11.0':
+    resolution: {integrity: sha512-lW16YCGJ7ItUy92hehGjuMIxvhCeW8pYi4w4jzzfo8UtRbEamagUJAzAEh1VxS6wHfDh6yB+/KE/Rqp2i6elIw==}
+    hasBin: true
+    peerDependencies:
+      zod: ^3.25.0 || ^4.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
 
   '@arethetypeswrong/core@0.18.5':
     resolution: {integrity: sha512-9ytjzGwxjm9Uz7I9avfbt5vlQt6uk9uRRESzJjqrznl6WKvI6dwYTo+vJ3U02Wrq/mR3iql/PzhvHhKdJIAjDQ==}
@@ -574,8 +583,8 @@ packages:
     resolution: {integrity: sha512-IkO+/KEUvwbVpiURZg+P7zF74z5Jxe0UgJxVni+RtoHQ6IZieXaO02kmadomap/q+l6bc/jdPGGqTjhuZnuz1Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@fazon/adapter-vue@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue':
-    resolution: {directory: .fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue, type: directory}
+  '@fazon/adapter-vue@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue':
+    resolution: {directory: .fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue, type: directory}
     engines: {node: '>=26'}
     peerDependencies:
       '@storybook/vue3-vite': 10.6.7
@@ -587,8 +596,8 @@ packages:
       vite: 8.3.8
       vitest: 5.1.1
 
-  '@fazon/core@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core':
-    resolution: {directory: .fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core, type: directory}
+  '@fazon/core@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core':
+    resolution: {directory: .fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core, type: directory}
     engines: {node: '>=26'}
     peerDependencies:
       stylelint: ^18.0.0
@@ -800,6 +809,10 @@ packages:
 
   '@one-ini/wasm@0.2.1':
     resolution: {integrity: sha512-TUqERXGNTifZ9y2g3wPxQrw3HpHv/02DsW3D90T9x0hhonrL1ZqpSmNrU2XkoIq0fP1N6gZfVQzy2Fw1ZvGBNg==}
+
+  '@opentelemetry/api@1.10.0':
+    resolution: {integrity: sha512-lMkyes8iHrG+mk6WH7X70MdCLI2RS0FwNBY1PyQ8UemaijE2m5mv5A0Niy3HtbYTFrgkUEQjFMXmSAk2hQDuPQ==}
+    engines: {node: '>=8.0.0'}
 
   '@oxc-parser/binding-android-arm-eabi@0.127.0':
     resolution: {integrity: sha512-0LC7ye4hvqbIKxAzThzvswgHLFu2AURKzYLeSVvLdu2TBOYWQDmHnTqPLeA597BcUCxiLqLsS4CJ5uoI5WYWCQ==}
@@ -1147,6 +1160,9 @@ packages:
 
   '@rolldown/pluginutils@1.1.1':
     resolution: {integrity: sha512-glFIJDvLNDtJhT9qrMFWLPbvS+skxgt4L0K8Ei2YtnhPysAJnsI7nyxSJxKj4ADeKX0OLjC4ntRkwpLOoS3rwA==}
+
+  '@stablelib/base64@1.0.1':
+    resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
 
   '@storybook/builder-vite@10.6.7':
     resolution: {integrity: sha512-6DI3XP4He/nMMK4vGLl9tkneygr5bJvYx5EwNZMzw15tCosvGuWRREBvWqTHjZdoRa8HJpqosoFm60splBoAew==}
@@ -1832,11 +1848,14 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
+  fast-sha256@1.3.0:
+    resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
+
   fast-uri@3.1.9:
     resolution: {integrity: sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==}
 
-  fazon@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/cli:
-    resolution: {directory: .fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/cli, type: directory}
+  fazon@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/cli:
+    resolution: {directory: .fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/cli, type: directory}
     engines: {node: '>=26'}
     hasBin: true
 
@@ -2060,6 +2079,10 @@ packages:
   js-yaml@5.5.0:
     resolution: {integrity: sha512-paNr4LFIFPjeeSmwNYdrb8FafLLG/Cr2Af3GjbsHJ5CxIjH4r0c2emlmRdAtpPAieP1gRVzk6buBbVP5gBMGAg==}
     hasBin: true
+
+  json-schema-to-ts@3.1.1:
+    resolution: {integrity: sha512-+DWg8jCJG2TEnpy7kOm/7/AxaYoaRbjVB4LFZLySZlWn8exGs3A4OLJR966cVvU26N7X9TWxl+Jsw7dzAqKT6g==}
+    engines: {node: '>=16'}
 
   json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
@@ -2559,6 +2582,9 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
+  standardwebhooks@1.3.0:
+    resolution: {integrity: sha512-5W9skHjqAm2dlA9wWvglTP+oX47JX4lFXVk1aJV7+TG1snvTR4QXaVgPscEzvOw9GRreeavMwbqEeL+MGhZHCg==}
+
   std-env@4.3.0:
     resolution: {integrity: sha512-OtU/EgQ1kIm5KwqQpBC6ZEMXrZRui11w8zgfTWp8cdO9B8OaPsbA8bTHO2P+HNo1VlUTGMVBwPhydu6poeXiag==}
 
@@ -2657,6 +2683,9 @@ packages:
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
+
+  ts-algebra@2.0.0:
+    resolution: {integrity: sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw==}
 
   ts-api-utils@2.5.0:
     resolution: {integrity: sha512-OJ/ibxhPlqrMM0UiNHJ/0CKQkoKF243/AEmplt3qpRgkW8VG7IfOS41h7V8TjITqdByHzrjcS/2si+y4lIh8NA==}
@@ -2939,6 +2968,12 @@ snapshots:
 
   '@andrewbranch/untar.js@1.0.4': {}
 
+  '@anthropic-ai/sdk@1.11.0':
+    dependencies:
+      '@opentelemetry/api': 1.10.0
+      json-schema-to-ts: 3.1.1
+      standardwebhooks: 1.3.0
+
   '@arethetypeswrong/core@0.18.5':
     dependencies:
       '@andrewbranch/untar.js': 1.0.4
@@ -3199,10 +3234,10 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@fazon/adapter-vue@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)':
+  '@fazon/adapter-vue@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.15.0(supports-color@7.2.0))
-      '@fazon/core': file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core(stylelint@18.0.0)
+      '@fazon/core': file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core(stylelint@18.0.0)
       '@storybook/vue3-vite': 10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3))
       '@vitest/browser-playwright': 5.1.1(playwright@1.65.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       eslint: 10.15.0(supports-color@7.2.0)
@@ -3213,16 +3248,18 @@ snapshots:
       typescript: 6.0.3
       typescript-eslint: 8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       vite: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1)
-      vitest: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+      vitest: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       vue-component-meta: 3.3.14(typescript@6.0.3)
       vue-eslint-parser: 10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)
     transitivePeerDependencies:
       - '@typescript/native'
       - postcss
       - supports-color
+      - zod
 
-  '@fazon/core@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core(stylelint@18.0.0)':
+  '@fazon/core@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core(stylelint@18.0.0)':
     dependencies:
+      '@anthropic-ai/sdk': 1.11.0
       '@arethetypeswrong/core': 0.18.5
       ajv: 8.20.0
       ajv-formats: 3.0.1
@@ -3236,6 +3273,8 @@ snapshots:
       yaml: 2.9.1
     optionalDependencies:
       stylelint: 18.0.0
+    transitivePeerDependencies:
+      - zod
 
   '@floating-ui/core@1.8.0':
     dependencies:
@@ -3454,6 +3493,8 @@ snapshots:
 
   '@one-ini/wasm@0.2.1': {}
 
+  '@opentelemetry/api@1.10.0': {}
+
   '@oxc-parser/binding-android-arm-eabi@0.127.0':
     optional: true
 
@@ -3642,6 +3683,8 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.1.1': {}
+
+  '@stablelib/base64@1.0.1': {}
 
   '@storybook/builder-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))':
     dependencies:
@@ -3847,7 +3890,7 @@ snapshots:
       '@vitest/mocker': 5.1.1(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       playwright: 1.65.1
       tinyrainbow: 3.2.0
-      vitest: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+      vitest: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -3864,7 +3907,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.2.0
-      vitest: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+      vitest: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       ws: 8.23.0
     transitivePeerDependencies:
       - bufferutil
@@ -3911,7 +3954,7 @@ snapshots:
       pathe: 2.0.3
       sirv: 3.0.2
       tinyrainbow: 3.2.0
-      vitest: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+      vitest: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -4441,12 +4484,14 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
+  fast-sha256@1.3.0: {}
+
   fast-uri@3.1.9: {}
 
-  fazon@file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1):
+  fazon@file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/cli(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1):
     dependencies:
-      '@fazon/adapter-vue': file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
-      '@fazon/core': file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core(stylelint@18.0.0)
+      '@fazon/adapter-vue': file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/adapter-vue(@storybook/vue3-vite@10.6.7(storybook@10.6.7(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vue@3.5.45(typescript@6.0.3)))(@vitest/browser-playwright@5.1.1)(eslint-plugin-vue@10.12.1(@typescript-eslint/parser@8.73.0(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(eslint@10.15.0(supports-color@7.2.0))(vue-eslint-parser@10.4.2(eslint@10.15.0(supports-color@7.2.0))(supports-color@7.2.0)))(eslint@10.15.0(supports-color@7.2.0))(postcss@8.5.33)(stylelint@18.0.0)(supports-color@7.2.0)(typescript@6.0.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
+      '@fazon/core': file:.fazon-framework/449dbff8c7f0d90a14769b859426e7c6445dc675/packages/core(stylelint@18.0.0)
     transitivePeerDependencies:
       - '@storybook/vue3-vite'
       - '@typescript/native'
@@ -4459,6 +4504,7 @@ snapshots:
       - typescript
       - vite
       - vitest
+      - zod
 
   fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
@@ -4663,6 +4709,11 @@ snapshots:
   js-yaml@5.5.0:
     dependencies:
       argparse: 3.0.4
+
+  json-schema-to-ts@3.1.1:
+    dependencies:
+      '@babel/runtime': 7.29.14
+      ts-algebra: 2.0.0
 
   json-schema-traverse@0.4.1: {}
 
@@ -5212,6 +5263,11 @@ snapshots:
 
   source-map@0.6.1: {}
 
+  standardwebhooks@1.3.0:
+    dependencies:
+      '@stablelib/base64': 1.0.1
+      fast-sha256: 1.3.0
+
   std-env@4.3.0: {}
 
   storybook@10.6.7(prettier@3.10.1)(react@19.3.1):
@@ -5330,6 +5386,8 @@ snapshots:
     dependencies:
       tslib: 2.9.1
 
+  ts-algebra@2.0.0: {}
+
   ts-api-utils@2.5.0(typescript@6.0.3):
     dependencies:
       typescript: 6.0.3
@@ -5411,13 +5469,13 @@ snapshots:
   vitest-browser-vue@3.1.0(@vue/compiler-dom@3.5.45)(@vue/server-renderer@3.5.45)(vitest@5.1.1)(vue@3.5.45(typescript@6.0.3)):
     dependencies:
       '@vue/test-utils': 2.6.0(@vue/compiler-dom@3.5.45)(@vue/server-renderer@3.5.45)(vue@3.5.45(typescript@6.0.3))
-      vitest: 5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
+      vitest: 5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
       vue: 3.5.45(typescript@6.0.3)
     transitivePeerDependencies:
       - '@vue/compiler-dom'
       - '@vue/server-renderer'
 
-  vitest@5.1.1(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1)):
+  vitest@5.1.1(@opentelemetry/api@1.10.0)(@types/node@26.6.6)(@vitest/browser-playwright@5.1.1)(@vitest/ui@5.1.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1)):
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/mocker': 5.1.1(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))
@@ -5434,6 +5492,7 @@ snapshots:
       vite: 8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1)
       why-is-node-running: 3.2.1
     optionalDependencies:
+      '@opentelemetry/api': 1.10.0
       '@types/node': 26.6.6
       '@vitest/browser-playwright': 5.1.1(playwright@1.65.1)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.1.1)
       '@vitest/ui': 5.1.1(vitest@5.1.1)

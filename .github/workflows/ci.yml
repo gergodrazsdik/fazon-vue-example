@@ -81,9 +81,16 @@ jobs:
   # The reusable workflow, at the framework commit the packages and the image name (ADAPTER-003).
   # Until M5 the install builds that commit from source first (scripts/framework.sh).
   fazon:
-    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@38dc84daee063b86e1352ea87549371835e44e59
+    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@449dbff8c7f0d90a14769b859426e7c6445dc675
     permissions:
       contents: read
+      id-token: write # only its judge job uses it, for workload identity federation
       pull-requests: write # only its comment job uses it
+    # The judge's federation IDs, from the repository's variables: not secrets
+    # (https://github.com/gergodrazsdik/fazon/blob/main/docs/spec/workflow.md#credentials).
     with:
       install-command: scripts/framework.sh && pnpm install --frozen-lockfile
+      anthropic-federation-rule-id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
+      anthropic-organization-id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
+      anthropic-service-account-id: ${{ vars.ANTHROPIC_SERVICE_ACCOUNT_ID }}
+      anthropic-workspace-id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
