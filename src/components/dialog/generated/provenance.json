@@ -3,10 +3,10 @@
   "component": "Dialog",
   "spec": {
     "path": "specs/dialog.md",
-    "hash": "sha256:8ee096326adbcab5c97cfae63daa9977b9ba874a094dd735f8bedb251e4ed30b"
+    "hash": "sha256:5e540e4034f92007b1896aedd6be6572dba2949f8944f6a29a2b8ea561433728"
   },
   "api": {
-    "hash": "sha256:7a01b63fb31671a699b5ce8db10666db0f4aeb6a79ce22b0e5f0924905007f5a",
+    "hash": "sha256:006d68f4e7dbd313a9e000cd44af85ccefe18677c00ea0cc32cc51d2db68054d",
     "approved": "2026-11-26"
   }
 }

@@ -12,21 +12,463 @@
     "scale": 2
   },
   "fixtures": {
-    "empty": {}
+    "confirm": {
+      "props": {
+        "open": true
+      },
+      "parts": {
+        "Trigger": [
+          {
+            "slots": {
+              "default": "Delete project"
+            }
+          }
+        ],
+        "Overlay": [
+          {}
+        ],
+        "Content": [
+          {}
+        ],
+        "Title": [
+          {
+            "slots": {
+              "default": "Delete this project?"
+            }
+          }
+        ],
+        "Description": [
+          {
+            "slots": {
+              "default": "This can't be undone."
+            }
+          }
+        ],
+        "Body": [
+          {
+            "slots": {
+              "default": "All its components, specs and baselines are removed."
+            }
+          }
+        ],
+        "Footer": [
+          {
+            "slots": {
+              "default": [
+                {
+                  "component": "Button",
+                  "props": {
+                    "variant": "secondary"
+                  },
+                  "slots": {
+                    "default": "Cancel"
+                  }
+                },
+                {
+                  "component": "Button",
+                  "props": {
+                    "variant": "primary"
+                  },
+                  "slots": {
+                    "default": "Delete"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "Close": [
+          {}
+        ]
+      }
+    },
+    "long-content": {
+      "props": {
+        "open": true
+      },
+      "parts": {
+        "Trigger": [
+          {
+            "slots": {
+              "default": "Delete project"
+            }
+          }
+        ],
+        "Overlay": [
+          {}
+        ],
+        "Content": [
+          {}
+        ],
+        "Title": [
+          {
+            "slots": {
+              "default": "Delete this project?"
+            }
+          }
+        ],
+        "Description": [
+          {
+            "slots": {
+              "default": "This can't be undone."
+            }
+          }
+        ],
+        "Body": [
+          {
+            "slots": {
+              "default": [
+                {
+                  "p": "Every component in the project is removed, together with its spec, stories, tests and screenshot baselines."
+                },
+                {
+                  "p": "Pull requests that are still open keep their branches, but their checks will fail until the project is restored from a backup."
+                },
+                {
+                  "p": "Members keep access to other projects. Their roles in this project are removed, and the audit log keeps a record of the deletion."
+                },
+                {
+                  "p": "Integrations that publish this project's package stop at their next run."
+                }
+              ]
+            }
+          }
+        ],
+        "Footer": [
+          {
+            "slots": {
+              "default": [
+                {
+                  "component": "Button",
+                  "props": {
+                    "variant": "secondary"
+                  },
+                  "slots": {
+                    "default": "Cancel"
+                  }
+                },
+                {
+                  "component": "Button",
+                  "props": {
+                    "variant": "primary"
+                  },
+                  "slots": {
+                    "default": "Delete"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "Close": [
+          {}
+        ]
+      }
+    }
   },
   "stories": [
     {
-      "name": "dialog--empty--default",
-      "storybookId": "dialog--empty-default",
+      "name": "dialog--confirm--size-sm--default",
+      "storybookId": "dialog--confirm-size-sm-default",
       "grid": "axes",
-      "fixture": "empty",
-      "axes": {},
+      "fixture": "confirm",
+      "axes": {
+        "size": "sm"
+      },
       "state": {
         "name": "default"
       },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "sm"
+          }
+        }
+      ],
       "judge": [
         "light",
         "dark"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-md--default",
+      "storybookId": "dialog--confirm-size-md-default",
+      "grid": "axes",
+      "fixture": "confirm",
+      "axes": {
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-lg--default",
+      "storybookId": "dialog--confirm-size-lg-default",
+      "grid": "axes",
+      "fixture": "confirm",
+      "axes": {
+        "size": "lg"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "lg"
+          }
+        }
+      ],
+      "judge": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-md--closed",
+      "storybookId": "dialog--confirm-size-md-closed",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "md"
+      },
+      "state": {
+        "name": "closed"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "md"
+          }
+        },
+        {
+          "target": "root",
+          "props": {
+            "open": false
+          }
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-sm--close-hover",
+      "storybookId": "dialog--confirm-size-sm-close-hover",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "sm"
+      },
+      "state": {
+        "name": "hover",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "sm"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-md--close-hover",
+      "storybookId": "dialog--confirm-size-md-close-hover",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "md"
+      },
+      "state": {
+        "name": "hover",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-lg--close-hover",
+      "storybookId": "dialog--confirm-size-lg-close-hover",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "lg"
+      },
+      "state": {
+        "name": "hover",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "lg"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "hover",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-sm--close-focus-visible",
+      "storybookId": "dialog--confirm-size-sm-close-focus-visible",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "sm"
+      },
+      "state": {
+        "name": "focus-visible",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "sm"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-md--close-focus-visible",
+      "storybookId": "dialog--confirm-size-md-close-focus-visible",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "md"
+      },
+      "state": {
+        "name": "focus-visible",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "md"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--confirm--size-lg--close-focus-visible",
+      "storybookId": "dialog--confirm-size-lg-close-focus-visible",
+      "grid": "states",
+      "fixture": "confirm",
+      "axes": {
+        "size": "lg"
+      },
+      "state": {
+        "name": "focus-visible",
+        "part": "Close"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "lg"
+          }
+        }
+      ],
+      "input": [
+        {
+          "action": "focus",
+          "target": "Close[default]"
+        }
+      ],
+      "judge": [
+        "light"
+      ]
+    },
+    {
+      "name": "dialog--long-content--size-md--default",
+      "storybookId": "dialog--long-content-size-md-default",
+      "grid": "fixtures",
+      "fixture": "long-content",
+      "axes": {
+        "size": "md"
+      },
+      "state": {
+        "name": "default"
+      },
+      "set": [
+        {
+          "target": "root",
+          "props": {
+            "size": "md"
+          }
+        }
+      ],
+      "judge": [
+        "light"
       ]
     }
   ]
