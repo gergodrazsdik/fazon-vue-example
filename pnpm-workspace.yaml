@@ -16,5 +16,5 @@ allowBuilds:
 # framework's own workspace: these point those dependencies at the same build as package.json.
 # Temporary, with scripts/framework.sh.
 overrides:
-  "@fazon/core": "file:.fazon-framework/ff1bccfbefd3d9a824c1db6da1487e95ed6e0547/packages/core"
-  "@fazon/adapter-vue": "file:.fazon-framework/ff1bccfbefd3d9a824c1db6da1487e95ed6e0547/packages/adapter-vue"
+  "@fazon/core": "file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/core"
+  "@fazon/adapter-vue": "file:.fazon-framework/38dc84daee063b86e1352ea87549371835e44e59/packages/adapter-vue"
