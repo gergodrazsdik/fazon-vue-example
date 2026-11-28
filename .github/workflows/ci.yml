@@ -81,7 +81,7 @@ jobs:
   # The reusable workflow, at the framework commit the packages and the image name (ADAPTER-003).
   # Until M5 the install builds that commit from source first (scripts/framework.sh).
   fazon:
-    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@a25ba88eab262f3a7c24a8d49903a8cd730e0057
+    uses: gergodrazsdik/fazon/.github/workflows/verify.yml@51fa3f3210b76e21c0f178186f867d832ba012fd
     permissions:
       contents: read
       id-token: write # only its judge job uses it, for workload identity federation
