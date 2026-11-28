@@ -39,6 +39,7 @@ The spec fixes the API; the adapter maps it to Vue ([API mapping](https://github
 | Rule | Kept by |
 |---|---|
 | The root element carries `data-part="<Component>"` and each part's root element `data-part="<Part>"`, with the names as the spec writes them. | Enforced: the verifier (MATRIX-004) |
+| A mark that shows a state or takes its own token, such as a checkbox's tick, a radio's dot or a switch's thumb, is an element with `data-part`: a part in the spec, such as `CheckboxIndicator`. Pseudo-elements are for decoration that carries no state ([ADR 0030](https://github.com/gergodrazsdik/fazon/blob/main/docs/adr/0030-marks-are-parts.md)). | Guidance; token rules and reflected states reach only parts |
 | Every state that isn't a pseudo-state is reflected while it holds: the element carries `data-<state>`, such as `data-selected` or `data-disabled`, with no value. | Enforced: the verifier (MATRIX-005) |
 | Styles select states through these attributes or through pseudo-classes (`:hover`, `:focus-visible`, `:active`), never through a class added for the state. | Guidance |
 | Attributes a headless primitive sets, such as Reka UI's `data-state`, stay as they are; the component adds its own `data-<state>` beside them. | Guidance |
